@@ -1,0 +1,2214 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Practice Activity: Basic Syntax</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Copy_of_PA_errors_python (1)_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Copy_of_PA_errors_python (1)_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Copy_of_PA_errors_python (1)_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Copy_of_PA_errors_python (1)_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="Copy_of_PA_errors_python (1)_files/libs/quarto-html/popper.min.js"></script>
+<script src="Copy_of_PA_errors_python (1)_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Copy_of_PA_errors_python (1)_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Copy_of_PA_errors_python (1)_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Copy_of_PA_errors_python (1)_files/libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Copy_of_PA_errors_python (1)_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Copy_of_PA_errors_python (1)_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Copy_of_PA_errors_python (1)_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Practice Activity: Basic Syntax</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>In this PA, you will will be creating and manipulating basic objects to uncover a top secret message.</p>
+<section id="hint-1" class="level3">
+<h3 class="anchored" data-anchor-id="hint-1">Hint 1</h3>
+<p>As you work through this PA, you will encounter some code that does not work as you want it to. Don’t despair! Errors (when R is unable to run your code) and bugs (when the code doesn’t do what you hoped) are a natural part of coding. Even the best of the best deal with these problems regularly - learning to track down the issue is a skill that you can learn and practice.</p>
+<p>Google is your friend! If an error is confusing, copy it into Google and see what other people are saying. If you don’t know how to do something, search for it.</p>
+</section>
+<section id="hint-2" class="level3">
+<h3 class="anchored" data-anchor-id="hint-2">Hint 2</h3>
+<p>Just because there is no error message doesn’t mean everything went smoothly. You should be regularly printing out your objects, to see they contain the information and format that you expect.</p>
+<p>For example, if you have an object named <code>my_thing</code>, you might first want to simply look at the object by typing its name.</p>
+<p>However, you might also want to make sure it is the right <strong>object type</strong> and/or the right <strong>object structure</strong>.</p>
+<div id="cell-2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="2bc8ee8c-ccee-4494-a9b6-5545a0b2dc0e" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="st">"my_thing"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(<span class="st">"my_thing"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>8</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="part-one-setup" class="level2">
+<h2 class="anchored" data-anchor-id="part-one-setup">Part One: Setup</h2>
+<p>Each of the following code chunks will cause an error and/or do the desired task incorrectly. Find the mistake, and correct it to complete the intended action.</p>
+<ol type="1">
+<li>Create lists containing the upper case letters, lower case letters, and some punctuation marks.</li>
+</ol>
+<div id="cell-4" class="cell" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lower_case <span class="op">=</span> [<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>, <span class="st">"e"</span>, <span class="st">"f"</span>, <span class="st">"g"</span>, <span class="st">"h"</span>, <span class="st">"i"</span>, <span class="st">"j"</span>, <span class="st">"k"</span>, <span class="st">"l"</span>, <span class="st">"m"</span>, <span class="st">"n"</span>, <span class="st">"o"</span>, <span class="st">"p"</span>, <span class="st">"q"</span>, <span class="st">"r"</span>, <span class="st">"s"</span>, <span class="st">"t"</span>, <span class="st">"u"</span>, <span class="st">"v"</span>, <span class="st">"w"</span>, <span class="st">"x"</span>, <span class="st">"y"</span>, <span class="st">"z"</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>upper_case <span class="op">=</span> [<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"E"</span>, <span class="st">"F"</span>, <span class="st">"G"</span>, <span class="st">"H"</span>, <span class="st">"I"</span>, <span class="st">"J"</span>, <span class="st">"K"</span>, <span class="st">"L"</span>, <span class="st">"M"</span>, <span class="st">"N"</span>, <span class="st">"O"</span>, <span class="st">"P"</span>, <span class="st">"Q"</span>, <span class="st">"R"</span>, <span class="st">"S"</span>, <span class="st">"T"</span>, <span class="st">"U"</span>, <span class="st">"V"</span>, <span class="st">"W"</span>, <span class="st">"X"</span>, <span class="st">"Y"</span>, <span class="st">"Z"</span>]</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>punctuation <span class="op">=</span> [<span class="st">"."</span>, <span class="st">","</span>, <span class="st">"!"</span>, <span class="st">"?"</span>, <span class="st">"'"</span>, <span class="st">"</span><span class="ch">\"</span><span class="st">"</span>, <span class="st">"("</span>, <span class="st">")"</span>, <span class="st">" "</span>, <span class="st">"-"</span>, <span class="st">";"</span>, <span class="st">":"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="2" type="1">
+<li>Make one long list containing all the symbols. Find the length of this list.</li>
+</ol>
+<div id="cell-6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="45a7eb6a-0a00-4c4d-d96c-6311e435a3ed" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>all_symbols <span class="op">=</span> [lower_case, upper_case, punctuation]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(lower_case <span class="op">+</span> upper_case <span class="op">+</span> punctuation)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>64</code></pre>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Repeat the previous steps, but instead of using <em>list</em> type objects, use <strong>numpy arrays</strong>. Don’t forget to <strong>import</strong> the numpy library!</li>
+</ol>
+<div id="cell-8" class="cell" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>lower_case <span class="op">=</span> np.array([<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>, <span class="st">"e"</span>, <span class="st">"f"</span>, <span class="st">"g"</span>, <span class="st">"h"</span>, <span class="st">"i"</span>, <span class="st">"j"</span>, <span class="st">"k"</span>, <span class="st">"l"</span>, <span class="st">"m"</span>, <span class="st">"n"</span>, <span class="st">"o"</span>, <span class="st">"p"</span>, <span class="st">"q"</span>, <span class="st">"r"</span>, <span class="st">"s"</span>, <span class="st">"t"</span>, <span class="st">"u"</span>, <span class="st">"v"</span>, <span class="st">"w"</span>, <span class="st">"x"</span>, <span class="st">"y"</span>, <span class="st">"z"</span>])</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>upper_case <span class="op">=</span> np.array([<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"E"</span>, <span class="st">"F"</span>, <span class="st">"G"</span>, <span class="st">"H"</span>, <span class="st">"I"</span>, <span class="st">"J"</span>, <span class="st">"K"</span>, <span class="st">"L"</span>, <span class="st">"M"</span>, <span class="st">"N"</span>, <span class="st">"O"</span>, <span class="st">"P"</span>, <span class="st">"Q"</span>, <span class="st">"R"</span>, <span class="st">"S"</span>, <span class="st">"T"</span>, <span class="st">"U"</span>, <span class="st">"V"</span>, <span class="st">"W"</span>, <span class="st">"X"</span>, <span class="st">"Y"</span>, <span class="st">"Z"</span>])</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>punctuation <span class="op">=</span> np.array([<span class="st">"."</span>, <span class="st">","</span>, <span class="st">"!"</span>, <span class="st">"?"</span>, <span class="st">"'"</span>, <span class="st">"</span><span class="ch">\"</span><span class="st">"</span>, <span class="st">"("</span>, <span class="st">")"</span>, <span class="st">" "</span>, <span class="st">"-"</span>, <span class="st">";"</span>, <span class="st">":"</span>])</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">## Use np.concatenate to combine into long array</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>all_symbols <span class="op">=</span> np.concatenate([lower_case, upper_case, punctuation])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="4" type="1">
+<li>Make a <strong>pandas data frame</strong>, with one column called “Symbol” containing the <code>all_symbols</code> array.</li>
+</ol>
+<div id="cell-10" class="cell" data-execution_count="20">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>symbols_df <span class="op">=</span> pd.DataFrame(all_symbols, columns<span class="op">=</span>[<span class="st">"Symbol"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="part-two-decoding-the-secret-message." class="level2">
+<h2 class="anchored" data-anchor-id="part-two-decoding-the-secret-message.">Part Two: Decoding the secret message.</h2>
+<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="c3f0e329-7ef6-449b-fd11-78744e15b868" data-execution_count="21">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>top_secret <span class="op">=</span> pd.read_csv(<span class="st">"https://www.dropbox.com/s/k72h1zewk4gtqep/PA_Secret_Code?dl=1"</span>, header<span class="op">=</span><span class="va">None</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>top_secret <span class="op">=</span> top_secret[<span class="dv">0</span>].to_numpy()</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(top_secret)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[0.39104271 0.38644508 0.37131377 0.33881179 0.37131377 0.39695721
+ 0.35479413 0.37573224 0.3693288  0.37404822 0.37573224 0.37490299
+ 0.37490299 0.40018665 0.40307943 0.37490299 0.38531114 0.38024665
+ 0.40542    0.39915133 0.38644508 0.3858839  0.40757858 0.39457479
+ 0.3924204  0.39196872 0.40368332 0.39330231 0.40052335 0.41099418
+ 0.40597557 0.39915133 0.40214824 0.39695721 0.40246212 0.41362081
+ 0.41403541 0.50672129 0.46904194 0.4189279  0.40513799 0.50677976
+ 0.41403541 0.46026337 0.44516294 0.41006039 0.50685267 0.40485308
+ 0.43565499 0.40982195 0.50691085 0.41751216 0.42308635 0.43400049
+ 0.40933885 0.43181048 0.4148465  0.50701239 0.42481402 0.43765951
+ 0.50705579 0.48348599 0.42352845 0.41751216 0.50711356 0.45815983
+ 0.41403541 0.41504562 0.41927084 0.50976041 0.50719998 0.4658871
+ 0.43527447 0.43546538 0.50725745 0.43809559 0.42943293 0.43843959
+ 0.45144177 0.46293566 0.50734343 0.45947306 0.42367426 0.44995774
+ 0.42424999 0.50741487 0.48431772 0.43001775 0.42536683 0.50747189
+ 0.42293741 0.44482542 0.45095585 0.44509577 0.42990177 0.44536351
+ 0.4588652  0.42772674 0.45350415 0.50123071 0.50762811 0.50764227
+ 0.50765642 0.46785231 0.44462092 0.42859293 0.50771295 0.48499763
+ 0.43449742 0.43059051 0.50776936 0.44371693 0.44754076 0.44399823
+ 0.43170177 0.50783972 0.45345442 0.42966834 0.48534724 0.4365841
+ 0.45560881 0.50792392 0.44874606 0.45931226 0.4855361  0.43630862
+ 0.45443261 0.43191878 0.43245401 0.43479137 0.50082663 0.50806368
+ 0.50547189 0.47106801 0.43574932 0.46349614 0.4337992  0.45547027
+ 0.43649258 0.50817499 0.48603353 0.44033896 0.43721647 0.50823048
+ 0.4824714  0.43556035 0.43603037 0.43621618 0.43826812 0.45655973
+ 0.46451749 0.4519719  0.43757146 0.44615158 0.5021944  0.50839627
+ 0.44944491 0.46797064 0.50843757 0.45898784 0.45290136 0.45149524
+ 0.50325039 0.50850626 0.50851997 0.50853368 0.4945512  0.44420735
+ 0.44151119 0.50858846 0.44698083 0.44009846 0.46595066 0.4601071
+ 0.50865678 0.48709158 0.44543004 0.44104822 0.48718042 0.50872493
+ 0.44173981 0.44716873 0.48729843 0.44371693 0.50270629 0.50880649
+ 0.48741595 0.44685485 0.4444149  0.50886073 0.44357521 0.41582815
+ 0.27777778 0.4519719  0.44135772 0.50615966 0.48130898 0.39330231
+ 0.27777778 0.48130898 0.50615966 0.33881179 0.27777778 0.48130898
+ 0.33881179 0.39330231 0.5004074  0.50615966 0.46290025 0.367191
+ 0.4519719  0.27777778 0.43835399 0.367191   0.50615966 0.48130898
+ 0.39330231 0.367191   0.50615966 0.47686216 0.44691791 0.31628595
+ 0.40569917 0.44691791 0.31628595 0.50615966 0.31628595 0.39984581
+ 0.43835399 0.35479413 0.499388   0.50615966 0.27777778 0.42439207
+ 0.35479413 0.50615966 0.44135772 0.39330231 0.44691791 0.42439207
+ 0.50615966 0.50615966 0.50615966 0.49048008 0.39330231 0.367191
+ 0.50615966 0.37731997 0.43835399 0.44691791 0.42027496 0.39984581
+ 0.42822501 0.44691791 0.44135772 0.50615966 0.46290025 0.27777778
+ 0.42439207 0.35479413 0.367191   0.43835399 0.44135772 0.42439207
+ 0.27777778 0.48130898 0.33881179 0.39330231 0.5004074  0.50335795
+ 0.50615966 0.4736867  0.367191   0.50615966 0.48130898 0.42822501
+ 0.42822501 0.41099418 0.50615966 0.39330231 0.39984581 0.44135772
+ 0.50615966 0.44950236 0.42822501 0.43835399 0.43181048 0.27777778
+ 0.41582815 0.50615966 0.44135772 0.4519719  0.42822501 0.43835399
+ 0.35479413 0.50615966 0.39984581 0.42439207 0.50615966 0.39330231
+ 0.27777778 0.42439207 0.35479413 0.50795193 0.50615966 0.50615966
+ 0.50615966 0.4798659  0.42822501 0.42439207 0.3858839  0.50615966
+ 0.48130898 0.39984581 0.42027496 0.367191   0.50615966 0.48130898
+ 0.39330231 0.367191   0.50615966 0.42027496 0.27777778 0.42439207
+ 0.45433632 0.42822501 0.42027496 0.367191   0.50615966 0.37731997
+ 0.42822501 0.367191   0.50615966 0.39330231 0.367191   0.50615966
+ 0.44135772 0.42822501 0.44691791 0.3858839  0.39330231 0.48130898
+ 0.50706302 0.50615966 0.48925903 0.42822501 0.50615966 0.43835399
+ 0.367191   0.44135772 0.48130898 0.367191   0.35479413 0.50615966
+ 0.39330231 0.367191   0.50615966 0.31628595 0.45660421 0.50615966
+ 0.48130898 0.39330231 0.367191   0.50615966 0.49048008 0.44691791
+ 0.42027496 0.48130898 0.44691791 0.42027496 0.50615966 0.48130898
+ 0.43835399 0.367191   0.367191   0.50615966 0.50615966 0.50615966
+ 0.46087983 0.42439207 0.35479413 0.50615966 0.44135772 0.48130898
+ 0.42822501 0.42822501 0.35479413 0.50615966 0.27777778 0.4519719
+ 0.39330231 0.39984581 0.41582815 0.367191   0.50615966 0.39984581
+ 0.42439207 0.50615966 0.48130898 0.41944073 0.43843959 0.45259498
+ 0.41677629 0.41944073 0.48307774 0.49932124 0.50615966 0.46087983
+ 0.42439207 0.35479413 0.499388   0.50615966 0.27777778 0.44135772
+ 0.50615966 0.39984581 0.42439207 0.50615966 0.44691791 0.37731997
+ 0.37731997 0.39984581 0.44135772 0.39330231 0.50615966 0.48130898
+ 0.39330231 0.42822501 0.44691791 0.3858839  0.39330231 0.48130898
+ 0.50615966 0.39330231 0.367191   0.50615966 0.44135772 0.48130898
+ 0.42822501 0.42822501 0.35479413 0.499388   0.50615966 0.50615966
+ 0.50615966 0.49048008 0.39330231 0.367191   0.50615966 0.47686216
+ 0.27777778 0.31628595 0.31628595 0.367191   0.43835399 0.4519719
+ 0.42822501 0.33881179 0.41099418 0.499388   0.50615966 0.4519719
+ 0.39984581 0.48130898 0.39330231 0.39196872 0.32248439 0.367191
+ 0.32248439 0.35956775 0.39196872 0.35300139 0.32754887 0.39196872
+ 0.32754887 0.34680296 0.27777778 0.34902637 0.32248439 0.38858289
+ 0.39196872 0.37131377 0.27777778 0.34902637 0.32248439 0.39196872
+ 0.36487484 0.33554004 0.33881179 0.32754887 0.32754887 0.34680296
+ 0.33881179 0.35108493 0.33183084 0.39196872 0.37954338 0.33554004
+ 0.35806588 0.35300139 0.36234785 0.33183084 0.33554004 0.39196872
+ 0.37954338 0.33554004 0.32248439 0.39196872 0.37954338 0.36234785
+ 0.34680296 0.33183084 0.32248439 0.367191   0.39196872 0.36487484
+ 0.35300139 0.35300139 0.31628595 0.38858289 0.39196872 0.39196872
+ 0.39196872 0.3693288  0.35108493 0.31628595 0.39196872 0.29703187
+ 0.36234785 0.35806588 0.29703187 0.34680296 0.32248439 0.31628595
+ 0.39196872 0.27777778 0.35956775 0.39196872 0.33881179 0.37954338
+ 0.39196872 0.30829479 0.27777778 0.34902637 0.32248439 0.38909259
+ 0.39196872 0.38093256 0.35108493 0.32248439 0.38858289 0.39196872
+ 0.37954338 0.36487484 0.35300139 0.38909259 0.39196872 0.38093256
+ 0.35108493 0.32248439 0.38858289 0.39196872 0.37954338 0.36487484
+ 0.35300139 0.38909259 0.39196872 0.3693288  0.35108493 0.31628595
+ 0.39196872 0.37954338 0.33554004 0.33881179 0.33374731 0.34309376
+ 0.31257675 0.31628595 0.37271463 0.25852369 0.33183084 0.29703187
+ 0.37271463 0.36028929 0.31628595 0.33881179 0.33374731 0.34309376
+ 0.31257675 0.31628595 0.37271463 0.37271463 0.37271463 0.36487484
+ 0.31628595 0.3032303  0.37271463 0.34438598 0.33374731 0.33881179
+ 0.33554004 0.25852369 0.32754887 0.37271463 0.27777778 0.32754887
+ 0.25852369 0.29703187 0.3032303  0.37271463 0.34562075 0.3032303
+ 0.33183084 0.36028929 0.37271463 0.34031366 0.33183084 0.31955771
+ 0.2890407  0.32513189 0.3032303  0.33881179 0.37316631 0.34031366
+ 0.33183084 0.25852369 0.2890407  0.32513189 0.3698385  0.37271463
+ 0.35647815 0.3032303  0.37271463 0.32754887 0.3032303  0.30829479
+ 0.36028929 0.37271463 0.31955771 0.36028929 0.37271463 0.29703187
+ 0.3032303  0.25852369 0.29703187 0.3693288  0.37271463 0.25852369
+ 0.33183084 0.29703187 0.37271463 0.34562075 0.31955771 0.36028929
+ 0.31628595 0.37271463 0.31955771 0.36028929 0.34031366 0.37271463
+ 0.31628595 0.3032303  0.25852369 0.29703187 0.37271463 0.37271463
+ 0.37271463 0.35647815 0.3032303  0.37271463 0.34562075 0.3032303
+ 0.33183084 0.36028929 0.37271463 0.31257675 0.25852369 0.32754887
+ 0.34309376 0.32977228 0.33554004 0.31628595 0.31955771 0.33183084
+ 0.31257675 0.37271463 0.27777778 0.25852369 0.2890407  0.32513189
+ 0.36880958 0.37271463 0.37131377 0.35007471 0.33183084 0.29703187
+ 0.37271463 0.31628595 0.25852369 0.34031366 0.36028929 0.37271463
+ 0.36028929 0.31628595 0.33374731 0.34309376 0.37271463 0.34031366
+ 0.32754887 0.25852369 0.31955771 0.33183084 0.37271463 0.36028929
+ 0.31628595 0.3032303  0.37271463 0.35806588 0.25852369 0.27777778
+ 0.27777778 0.3032303  0.33881179 0.34562075 0.33374731 0.2890407
+ 0.32513189 0.37033901 0.37271463 0.37271463 0.37271463 0.35205968
+ 0.33374731 0.32977228 0.3032303  0.37271463 0.36028929 0.33374731
+ 0.37271463 0.32977228 0.34793691 0.37271463 0.25852369 0.33881179
+ 0.32977228 0.34031366 0.3693288  0.37271463 0.32977228 0.34793691
+ 0.37271463 0.27777778 0.3032303  0.25852369 0.32977228 0.31955771
+ 0.34031366 0.31628595 0.37271463 0.27777778 0.33374731 0.34793691
+ 0.3698385  0.37271463 0.36167847 0.37271463 0.30829479 0.33881179
+ 0.25852369 0.27777778 0.32248439 0.33374731 0.34309376 0.34031366
+ 0.37271463 0.29703187 0.25852369 0.34793691 0.3698385  0.37271463
+ 0.35205968 0.25852369 0.32754887 0.32754887 0.33374731 0.33374731
+ 0.31628595 0.3698385  0.37271463 0.35205968 0.25852369 0.32754887
+ 0.32754887 0.25852369 0.34793691 0.3698385  0.37131377 0.37271463
+ 0.37271463 0.37271463 0.35647815 0.3032303  0.37271463 0.2890407
+ 0.31628595 0.33374731 0.33881179 0.36028929 0.32754887 0.3032303
+ 0.29703187 0.37271463 0.31955771 0.33183084 0.37271463 0.31628595
+ 0.31955771 0.34031366 0.37271463 0.32248439 0.33374731 0.34793691
+ 0.36880958 0.37271463 0.37083067 0.36487484 0.34562075 0.25852369
+ 0.34031366 0.37271463 0.27777778 0.33881179 0.31955771 0.32754887
+ 0.32754887 0.31955771 0.31257675 0.3693288  0.37271463 0.25852369
+ 0.33183084 0.29703187 0.37271463 0.36028929 0.31628595 0.3032303
+ 0.37271463 0.34031366 0.32754887 0.31955771 0.36028929 0.31628595
+ 0.34793691 0.37271463 0.36028929 0.33374731 0.34438598 0.3032303
+ 0.34031366 0.37271463 0.37271463 0.37271463 0.35300139 0.31955771
+ 0.29703187 0.37271463 0.31257675 0.34793691 0.33881179 0.3032303
+ 0.37271463 0.25852369 0.33183084 0.29703187 0.37271463 0.31257675
+ 0.31955771 0.32977228 0.27777778 0.32754887 0.3032303  0.37271463
+ 0.31955771 0.33183084 0.37271463 0.36028929 0.31628595 0.3032303
+ 0.37271463 0.34562075 0.25852369 0.27777778 0.3032303  0.37404822
+ 0.37271463 0.35007471 0.32754887 0.32754887 0.37271463 0.32977228
+ 0.31955771 0.32977228 0.34031366 0.34793691 0.37271463 0.34562075
+ 0.3032303  0.33881179 0.3032303  0.37271463 0.36028929 0.31628595
+ 0.3032303  0.37271463 0.27777778 0.33374731 0.33881179 0.33374731
+ 0.31257675 0.33374731 0.34438598 0.3032303  0.34031366 0.3693288
+ 0.37271463 0.37271463 0.37271463 0.35007471 0.33183084 0.29703187
+ 0.37271463 0.36028929 0.31628595 0.3032303  0.37271463 0.32977228
+ 0.33374731 0.32977228 0.3032303  0.37271463 0.33881179 0.25852369
+ 0.36028929 0.31628595 0.34031366 0.37271463 0.33374731 0.34309376
+ 0.36028929 0.31257675 0.33881179 0.25852369 0.27777778 0.3032303
+ 0.36880958]</code></pre>
+</div>
+</div>
+<div id="cell-13" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="56c5cf7b-98e0-4298-ef9b-8c2f6ef727ca" data-execution_count="22">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>decoded <span class="op">=</span> np.square(np.exp((top_secret <span class="op">+</span> <span class="dv">14</span>) <span class="op">*</span> <span class="dv">18</span> <span class="op">-</span> <span class="dv">257</span>))</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(decoded)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[5.900e+01 5.000e+01 2.900e+01 9.000e+00 2.900e+01 7.300e+01 1.600e+01
+ 3.400e+01 2.700e+01 3.200e+01 3.400e+01 3.300e+01 3.300e+01 8.200e+01
+ 9.100e+01 3.300e+01 4.800e+01 4.000e+01 9.900e+01 7.900e+01 5.000e+01
+ 4.900e+01 1.070e+02 6.700e+01 6.200e+01 6.100e+01 9.300e+01 6.400e+01
+ 8.300e+01 1.210e+02 1.010e+02 7.900e+01 8.800e+01 7.300e+01 8.900e+01
+ 1.330e+02 1.350e+02 3.797e+03 9.780e+02 1.610e+02 9.800e+01 3.805e+03
+ 1.350e+02 7.130e+02 4.140e+02 1.170e+02 3.815e+03 9.700e+01 2.940e+02
+ 1.160e+02 3.823e+03 1.530e+02 1.870e+02 2.770e+02 1.140e+02 2.560e+02
+ 1.390e+02 3.837e+03 1.990e+02 3.160e+02 3.843e+03 1.645e+03 1.900e+02
+ 1.530e+02 3.851e+03 6.610e+02 1.350e+02 1.400e+02 1.630e+02 4.236e+03
+ 3.863e+03 8.730e+02 2.900e+02 2.920e+02 3.871e+03 3.210e+02 2.350e+02
+ 3.250e+02 5.190e+02 7.850e+02 3.883e+03 6.930e+02 1.910e+02 4.920e+02
+ 1.950e+02 3.893e+03 1.695e+03 2.400e+02 2.030e+02 3.901e+03 1.860e+02
+ 4.090e+02 5.100e+02 4.130e+02 2.390e+02 4.170e+02 6.780e+02 2.210e+02
+ 5.590e+02 3.116e+03 3.923e+03 3.925e+03 3.927e+03 9.370e+02 4.060e+02
+ 2.280e+02 3.935e+03 1.737e+03 2.820e+02 2.450e+02 3.943e+03 3.930e+02
+ 4.510e+02 3.970e+02 2.550e+02 3.953e+03 5.580e+02 2.370e+02 1.759e+03
+ 3.040e+02 6.030e+02 3.965e+03 4.710e+02 6.890e+02 1.771e+03 3.010e+02
+ 5.780e+02 2.570e+02 2.620e+02 2.850e+02 3.071e+03 3.985e+03 3.630e+03
+ 1.052e+03 2.950e+02 8.010e+02 2.750e+02 6.000e+02 3.030e+02 4.001e+03
+ 1.803e+03 3.480e+02 3.110e+02 4.009e+03 1.586e+03 2.930e+02 2.980e+02
+ 3.000e+02 3.230e+02 6.240e+02 8.310e+02 5.290e+02 3.150e+02 4.290e+02
+ 3.226e+03 4.033e+03 4.830e+02 9.410e+02 4.039e+03 6.810e+02 5.470e+02
+ 5.200e+02 3.351e+03 4.049e+03 4.051e+03 4.053e+03 2.450e+03 4.000e+02
+ 3.630e+02 4.061e+03 4.420e+02 3.450e+02 8.750e+02 7.090e+02 4.071e+03
+ 1.873e+03 4.180e+02 3.570e+02 1.879e+03 4.081e+03 3.660e+02 4.450e+02
+ 1.887e+03 3.930e+02 3.286e+03 4.093e+03 1.895e+03 4.400e+02 4.030e+02
+ 4.101e+03 3.910e+02 1.440e+02 1.000e+00 5.290e+02 3.610e+02 3.721e+03
+ 1.521e+03 6.400e+01 1.000e+00 1.521e+03 3.721e+03 9.000e+00 1.000e+00
+ 1.521e+03 9.000e+00 6.400e+01 3.025e+03 3.721e+03 7.840e+02 2.500e+01
+ 5.290e+02 1.000e+00 3.240e+02 2.500e+01 3.721e+03 1.521e+03 6.400e+01
+ 2.500e+01 3.721e+03 1.296e+03 4.410e+02 4.000e+00 1.000e+02 4.410e+02
+ 4.000e+00 3.721e+03 4.000e+00 8.100e+01 3.240e+02 1.600e+01 2.916e+03
+ 3.721e+03 1.000e+00 1.960e+02 1.600e+01 3.721e+03 3.610e+02 6.400e+01
+ 4.410e+02 1.960e+02 3.721e+03 3.721e+03 3.721e+03 2.116e+03 6.400e+01
+ 2.500e+01 3.721e+03 3.600e+01 3.240e+02 4.410e+02 1.690e+02 8.100e+01
+ 2.250e+02 4.410e+02 3.610e+02 3.721e+03 7.840e+02 1.000e+00 1.960e+02
+ 1.600e+01 2.500e+01 3.240e+02 3.610e+02 1.960e+02 1.000e+00 1.521e+03
+ 9.000e+00 6.400e+01 3.025e+03 3.364e+03 3.721e+03 1.156e+03 2.500e+01
+ 3.721e+03 1.521e+03 2.250e+02 2.250e+02 1.210e+02 3.721e+03 6.400e+01
+ 8.100e+01 3.610e+02 3.721e+03 4.840e+02 2.250e+02 3.240e+02 2.560e+02
+ 1.000e+00 1.440e+02 3.721e+03 3.610e+02 5.290e+02 2.250e+02 3.240e+02
+ 1.600e+01 3.721e+03 8.100e+01 1.960e+02 3.721e+03 6.400e+01 1.000e+00
+ 1.960e+02 1.600e+01 3.969e+03 3.721e+03 3.721e+03 3.721e+03 1.444e+03
+ 2.250e+02 1.960e+02 4.900e+01 3.721e+03 1.521e+03 8.100e+01 1.690e+02
+ 2.500e+01 3.721e+03 1.521e+03 6.400e+01 2.500e+01 3.721e+03 1.690e+02
+ 1.000e+00 1.960e+02 5.760e+02 2.250e+02 1.690e+02 2.500e+01 3.721e+03
+ 3.600e+01 2.250e+02 2.500e+01 3.721e+03 6.400e+01 2.500e+01 3.721e+03
+ 3.610e+02 2.250e+02 4.410e+02 4.900e+01 6.400e+01 1.521e+03 3.844e+03
+ 3.721e+03 2.025e+03 2.250e+02 3.721e+03 3.240e+02 2.500e+01 3.610e+02
+ 1.521e+03 2.500e+01 1.600e+01 3.721e+03 6.400e+01 2.500e+01 3.721e+03
+ 4.000e+00 6.250e+02 3.721e+03 1.521e+03 6.400e+01 2.500e+01 3.721e+03
+ 2.116e+03 4.410e+02 1.690e+02 1.521e+03 4.410e+02 1.690e+02 3.721e+03
+ 1.521e+03 3.240e+02 2.500e+01 2.500e+01 3.721e+03 3.721e+03 3.721e+03
+ 7.290e+02 1.960e+02 1.600e+01 3.721e+03 3.610e+02 1.521e+03 2.250e+02
+ 2.250e+02 1.600e+01 3.721e+03 1.000e+00 5.290e+02 6.400e+01 8.100e+01
+ 1.440e+02 2.500e+01 3.721e+03 8.100e+01 1.960e+02 3.721e+03 1.521e+03
+ 1.640e+02 3.250e+02 5.410e+02 1.490e+02 1.640e+02 1.621e+03 2.909e+03
+ 3.721e+03 7.290e+02 1.960e+02 1.600e+01 2.916e+03 3.721e+03 1.000e+00
+ 3.610e+02 3.721e+03 8.100e+01 1.960e+02 3.721e+03 4.410e+02 3.600e+01
+ 3.600e+01 8.100e+01 3.610e+02 6.400e+01 3.721e+03 1.521e+03 6.400e+01
+ 2.250e+02 4.410e+02 4.900e+01 6.400e+01 1.521e+03 3.721e+03 6.400e+01
+ 2.500e+01 3.721e+03 3.610e+02 1.521e+03 2.250e+02 2.250e+02 1.600e+01
+ 2.916e+03 3.721e+03 3.721e+03 3.721e+03 2.116e+03 6.400e+01 2.500e+01
+ 3.721e+03 1.296e+03 1.000e+00 4.000e+00 4.000e+00 2.500e+01 3.240e+02
+ 5.290e+02 2.250e+02 9.000e+00 1.210e+02 2.916e+03 3.721e+03 5.290e+02
+ 8.100e+01 1.521e+03 6.400e+01 6.100e+01 5.000e+00 2.500e+01 5.000e+00
+ 1.900e+01 6.100e+01 1.500e+01 6.000e+00 6.100e+01 6.000e+00 1.200e+01
+ 1.000e+00 1.300e+01 5.000e+00 5.400e+01 6.100e+01 2.900e+01 1.000e+00
+ 1.300e+01 5.000e+00 6.100e+01 2.300e+01 8.000e+00 9.000e+00 6.000e+00
+ 6.000e+00 1.200e+01 9.000e+00 1.400e+01 7.000e+00 6.100e+01 3.900e+01
+ 8.000e+00 1.800e+01 1.500e+01 2.100e+01 7.000e+00 8.000e+00 6.100e+01
+ 3.900e+01 8.000e+00 5.000e+00 6.100e+01 3.900e+01 2.100e+01 1.200e+01
+ 7.000e+00 5.000e+00 2.500e+01 6.100e+01 2.300e+01 1.500e+01 1.500e+01
+ 4.000e+00 5.400e+01 6.100e+01 6.100e+01 6.100e+01 2.700e+01 1.400e+01
+ 4.000e+00 6.100e+01 2.000e+00 2.100e+01 1.800e+01 2.000e+00 1.200e+01
+ 5.000e+00 4.000e+00 6.100e+01 1.000e+00 1.900e+01 6.100e+01 9.000e+00
+ 3.900e+01 6.100e+01 3.000e+00 1.000e+00 1.300e+01 5.000e+00 5.500e+01
+ 6.100e+01 4.100e+01 1.400e+01 5.000e+00 5.400e+01 6.100e+01 3.900e+01
+ 2.300e+01 1.500e+01 5.500e+01 6.100e+01 4.100e+01 1.400e+01 5.000e+00
+ 5.400e+01 6.100e+01 3.900e+01 2.300e+01 1.500e+01 5.500e+01 6.100e+01
+ 2.700e+01 1.400e+01 4.000e+00 6.100e+01 3.900e+01 8.000e+00 9.000e+00
+ 7.500e+00 1.050e+01 3.500e+00 4.000e+00 3.050e+01 5.000e-01 7.000e+00
+ 2.000e+00 3.050e+01 1.950e+01 4.000e+00 9.000e+00 7.500e+00 1.050e+01
+ 3.500e+00 4.000e+00 3.050e+01 3.050e+01 3.050e+01 2.300e+01 4.000e+00
+ 2.500e+00 3.050e+01 1.100e+01 7.500e+00 9.000e+00 8.000e+00 5.000e-01
+ 6.000e+00 3.050e+01 1.000e+00 6.000e+00 5.000e-01 2.000e+00 2.500e+00
+ 3.050e+01 1.150e+01 2.500e+00 7.000e+00 1.950e+01 3.050e+01 9.500e+00
+ 7.000e+00 4.500e+00 1.500e+00 5.500e+00 2.500e+00 9.000e+00 3.100e+01
+ 9.500e+00 7.000e+00 5.000e-01 1.500e+00 5.500e+00 2.750e+01 3.050e+01
+ 1.700e+01 2.500e+00 3.050e+01 6.000e+00 2.500e+00 3.000e+00 1.950e+01
+ 3.050e+01 4.500e+00 1.950e+01 3.050e+01 2.000e+00 2.500e+00 5.000e-01
+ 2.000e+00 2.700e+01 3.050e+01 5.000e-01 7.000e+00 2.000e+00 3.050e+01
+ 1.150e+01 4.500e+00 1.950e+01 4.000e+00 3.050e+01 4.500e+00 1.950e+01
+ 9.500e+00 3.050e+01 4.000e+00 2.500e+00 5.000e-01 2.000e+00 3.050e+01
+ 3.050e+01 3.050e+01 1.700e+01 2.500e+00 3.050e+01 1.150e+01 2.500e+00
+ 7.000e+00 1.950e+01 3.050e+01 3.500e+00 5.000e-01 6.000e+00 1.050e+01
+ 6.500e+00 8.000e+00 4.000e+00 4.500e+00 7.000e+00 3.500e+00 3.050e+01
+ 1.000e+00 5.000e-01 1.500e+00 5.500e+00 2.650e+01 3.050e+01 2.900e+01
+ 1.350e+01 7.000e+00 2.000e+00 3.050e+01 4.000e+00 5.000e-01 9.500e+00
+ 1.950e+01 3.050e+01 1.950e+01 4.000e+00 7.500e+00 1.050e+01 3.050e+01
+ 9.500e+00 6.000e+00 5.000e-01 4.500e+00 7.000e+00 3.050e+01 1.950e+01
+ 4.000e+00 2.500e+00 3.050e+01 1.800e+01 5.000e-01 1.000e+00 1.000e+00
+ 2.500e+00 9.000e+00 1.150e+01 7.500e+00 1.500e+00 5.500e+00 2.800e+01
+ 3.050e+01 3.050e+01 3.050e+01 1.450e+01 7.500e+00 6.500e+00 2.500e+00
+ 3.050e+01 1.950e+01 7.500e+00 3.050e+01 6.500e+00 1.250e+01 3.050e+01
+ 5.000e-01 9.000e+00 6.500e+00 9.500e+00 2.700e+01 3.050e+01 6.500e+00
+ 1.250e+01 3.050e+01 1.000e+00 2.500e+00 5.000e-01 6.500e+00 4.500e+00
+ 9.500e+00 4.000e+00 3.050e+01 1.000e+00 7.500e+00 1.250e+01 2.750e+01
+ 3.050e+01 2.050e+01 3.050e+01 3.000e+00 9.000e+00 5.000e-01 1.000e+00
+ 5.000e+00 7.500e+00 1.050e+01 9.500e+00 3.050e+01 2.000e+00 5.000e-01
+ 1.250e+01 2.750e+01 3.050e+01 1.450e+01 5.000e-01 6.000e+00 6.000e+00
+ 7.500e+00 7.500e+00 4.000e+00 2.750e+01 3.050e+01 1.450e+01 5.000e-01
+ 6.000e+00 6.000e+00 5.000e-01 1.250e+01 2.750e+01 2.900e+01 3.050e+01
+ 3.050e+01 3.050e+01 1.700e+01 2.500e+00 3.050e+01 1.500e+00 4.000e+00
+ 7.500e+00 9.000e+00 1.950e+01 6.000e+00 2.500e+00 2.000e+00 3.050e+01
+ 4.500e+00 7.000e+00 3.050e+01 4.000e+00 4.500e+00 9.500e+00 3.050e+01
+ 5.000e+00 7.500e+00 1.250e+01 2.650e+01 3.050e+01 2.850e+01 2.300e+01
+ 1.150e+01 5.000e-01 9.500e+00 3.050e+01 1.000e+00 9.000e+00 4.500e+00
+ 6.000e+00 6.000e+00 4.500e+00 3.500e+00 2.700e+01 3.050e+01 5.000e-01
+ 7.000e+00 2.000e+00 3.050e+01 1.950e+01 4.000e+00 2.500e+00 3.050e+01
+ 9.500e+00 6.000e+00 4.500e+00 1.950e+01 4.000e+00 1.250e+01 3.050e+01
+ 1.950e+01 7.500e+00 1.100e+01 2.500e+00 9.500e+00 3.050e+01 3.050e+01
+ 3.050e+01 1.500e+01 4.500e+00 2.000e+00 3.050e+01 3.500e+00 1.250e+01
+ 9.000e+00 2.500e+00 3.050e+01 5.000e-01 7.000e+00 2.000e+00 3.050e+01
+ 3.500e+00 4.500e+00 6.500e+00 1.000e+00 6.000e+00 2.500e+00 3.050e+01
+ 4.500e+00 7.000e+00 3.050e+01 1.950e+01 4.000e+00 2.500e+00 3.050e+01
+ 1.150e+01 5.000e-01 1.000e+00 2.500e+00 3.200e+01 3.050e+01 1.350e+01
+ 6.000e+00 6.000e+00 3.050e+01 6.500e+00 4.500e+00 6.500e+00 9.500e+00
+ 1.250e+01 3.050e+01 1.150e+01 2.500e+00 9.000e+00 2.500e+00 3.050e+01
+ 1.950e+01 4.000e+00 2.500e+00 3.050e+01 1.000e+00 7.500e+00 9.000e+00
+ 7.500e+00 3.500e+00 7.500e+00 1.100e+01 2.500e+00 9.500e+00 2.700e+01
+ 3.050e+01 3.050e+01 3.050e+01 1.350e+01 7.000e+00 2.000e+00 3.050e+01
+ 1.950e+01 4.000e+00 2.500e+00 3.050e+01 6.500e+00 7.500e+00 6.500e+00
+ 2.500e+00 3.050e+01 9.000e+00 5.000e-01 1.950e+01 4.000e+00 9.500e+00
+ 3.050e+01 7.500e+00 1.050e+01 1.950e+01 3.500e+00 9.000e+00 5.000e-01
+ 1.000e+00 2.500e+00 2.650e+01]</code></pre>
+</div>
+</div>
+<section id="hint" class="level3">
+<h3 class="anchored" data-anchor-id="hint">Hint</h3>
+<p>Recall that basic math operations are <strong>vectorized</strong>. This means you don’t have to repeat the process for each item in a list; you can apply the math to the whole thing at once.</p>
+</section>
+<section id="instructions" class="level3">
+<h3 class="anchored" data-anchor-id="instructions">Instructions</h3>
+<p>By altering this top secret set of numbers, you will be able to create a message. Write your own code to complete the steps below.</p>
+<ol type="1">
+<li>Add 14 to every number.</li>
+<li>Multiply every number by 18, then subtract 257.</li>
+<li>Exponentiate every number. (That is, do e<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. You may have to Google how to do this!)</li>
+<li>Square every number.</li>
+</ol>
+<p><strong>Checkpoint:</strong> Headquarters has informed you that at this stage of decoding, there should be 352 numbers in the secret message that are below 17. Write code to check if this is true for your data.</p>
+<ol start="5" type="1">
+<li>Turn your one-dimensional array of numbers into a two-dimensional array (matrix) with 5 columns. This conversion should be <strong>column-wise</strong>; that is, the first several elements of the array should all end up in the first <strong>column</strong> of your matrix.</li>
+<li>Separately from your top secret numbers, create an array of all the even numbers between 1 and 382. Name it “evens”. That is, “evens” should contain 2, 4, 6, 8 …, 382.</li>
+<li>Subtract the “evens” vector from the first column of your secret message matrix.</li>
+<li>Subtract 100 from all numbers in the 18-24th rows of the 3rd column.</li>
+<li>Multiply all numbers in the 4th and 5th column by 2.</li>
+<li>Turn your matrix back into a one dimensional array. Again this should be <strong>column-wise</strong>, so that the first column of the matrix becomes the first elements of the array.</li>
+</ol>
+<p><strong>Checkpoint:</strong> Headquarters has informed you that at this stage of decoding, all numbers in indices 500 and beyond are below 100. Write code to check if your numbers fulfill this requirement.</p>
+<ol start="11" type="1">
+<li>Take the square root of all numbers in indices 37 to 464.</li>
+<li>Round all numbers to the nearest whole number.</li>
+<li>Replace all instances of the number 39 with 20.</li>
+</ol>
+<p><strong>Checkpoint:</strong> Headquarters has informed you that your final message should have 344 even numbers. Write code to check if your numbers fulfill this requirement.</p>
+</section>
+</section>
+<section id="part-3-the-secret-message" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-the-secret-message">Part 3: The secret message!</h2>
+<p>Run the following to discover the final message! Google the first line of this message, if you do not recognize it, to see what it is.</p>
+<div id="cell-15" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="e1fa82c2-2178-4a2c-a112-1baf05a9225c" data-execution_count="23">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>count_below_17 <span class="op">=</span> np.<span class="bu">sum</span>(decoded <span class="op">&lt;</span> <span class="dv">17</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(count_below_17)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>352</code></pre>
+</div>
+</div>
+<div id="cell-16" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="3744c7b8-d6d7-4789-fc29-6bb56e4a0814" data-execution_count="24">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>matrix <span class="op">=</span> decoded.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>, order<span class="op">=</span><span class="st">"F"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#-1, 5, order="F" means 5 columns, -1 tells NumPy to figure out how many rows, and order F means fill columns first not rows.</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(matrix)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[5.900e+01 1.440e+02 3.610e+02 9.000e+00 2.050e+01]
+ [5.000e+01 1.000e+00 1.521e+03 7.500e+00 3.050e+01]
+ [2.900e+01 5.290e+02 2.250e+02 1.050e+01 3.000e+00]
+ [9.000e+00 3.610e+02 2.250e+02 3.500e+00 9.000e+00]
+ [2.900e+01 3.721e+03 1.600e+01 4.000e+00 5.000e-01]
+ [7.300e+01 1.521e+03 3.721e+03 3.050e+01 1.000e+00]
+ [1.600e+01 6.400e+01 1.000e+00 5.000e-01 5.000e+00]
+ [3.400e+01 1.000e+00 5.290e+02 7.000e+00 7.500e+00]
+ [2.700e+01 1.521e+03 6.400e+01 2.000e+00 1.050e+01]
+ [3.200e+01 3.721e+03 8.100e+01 3.050e+01 9.500e+00]
+ [3.400e+01 9.000e+00 1.440e+02 1.950e+01 3.050e+01]
+ [3.300e+01 1.000e+00 2.500e+01 4.000e+00 2.000e+00]
+ [3.300e+01 1.521e+03 3.721e+03 9.000e+00 5.000e-01]
+ [8.200e+01 9.000e+00 8.100e+01 7.500e+00 1.250e+01]
+ [9.100e+01 6.400e+01 1.960e+02 1.050e+01 2.750e+01]
+ [3.300e+01 3.025e+03 3.721e+03 3.500e+00 3.050e+01]
+ [4.800e+01 3.721e+03 1.521e+03 4.000e+00 1.450e+01]
+ [4.000e+01 7.840e+02 1.640e+02 3.050e+01 5.000e-01]
+ [9.900e+01 2.500e+01 3.250e+02 3.050e+01 6.000e+00]
+ [7.900e+01 5.290e+02 5.410e+02 3.050e+01 6.000e+00]
+ [5.000e+01 1.000e+00 1.490e+02 2.300e+01 7.500e+00]
+ [4.900e+01 3.240e+02 1.640e+02 4.000e+00 7.500e+00]
+ [1.070e+02 2.500e+01 1.621e+03 2.500e+00 4.000e+00]
+ [6.700e+01 3.721e+03 2.909e+03 3.050e+01 2.750e+01]
+ [6.200e+01 1.521e+03 3.721e+03 1.100e+01 3.050e+01]
+ [6.100e+01 6.400e+01 7.290e+02 7.500e+00 1.450e+01]
+ [9.300e+01 2.500e+01 1.960e+02 9.000e+00 5.000e-01]
+ [6.400e+01 3.721e+03 1.600e+01 8.000e+00 6.000e+00]
+ [8.300e+01 1.296e+03 2.916e+03 5.000e-01 6.000e+00]
+ [1.210e+02 4.410e+02 3.721e+03 6.000e+00 5.000e-01]
+ [1.010e+02 4.000e+00 1.000e+00 3.050e+01 1.250e+01]
+ [7.900e+01 1.000e+02 3.610e+02 1.000e+00 2.750e+01]
+ [8.800e+01 4.410e+02 3.721e+03 6.000e+00 2.900e+01]
+ [7.300e+01 4.000e+00 8.100e+01 5.000e-01 3.050e+01]
+ [8.900e+01 3.721e+03 1.960e+02 2.000e+00 3.050e+01]
+ [1.330e+02 4.000e+00 3.721e+03 2.500e+00 3.050e+01]
+ [1.350e+02 8.100e+01 4.410e+02 3.050e+01 1.700e+01]
+ [3.797e+03 3.240e+02 3.600e+01 1.150e+01 2.500e+00]
+ [9.780e+02 1.600e+01 3.600e+01 2.500e+00 3.050e+01]
+ [1.610e+02 2.916e+03 8.100e+01 7.000e+00 1.500e+00]
+ [9.800e+01 3.721e+03 3.610e+02 1.950e+01 4.000e+00]
+ [3.805e+03 1.000e+00 6.400e+01 3.050e+01 7.500e+00]
+ [1.350e+02 1.960e+02 3.721e+03 9.500e+00 9.000e+00]
+ [7.130e+02 1.600e+01 1.521e+03 7.000e+00 1.950e+01]
+ [4.140e+02 3.721e+03 6.400e+01 4.500e+00 6.000e+00]
+ [1.170e+02 3.610e+02 2.250e+02 1.500e+00 2.500e+00]
+ [3.815e+03 6.400e+01 4.410e+02 5.500e+00 2.000e+00]
+ [9.700e+01 4.410e+02 4.900e+01 2.500e+00 3.050e+01]
+ [2.940e+02 1.960e+02 6.400e+01 9.000e+00 4.500e+00]
+ [1.160e+02 3.721e+03 1.521e+03 3.100e+01 7.000e+00]
+ [3.823e+03 3.721e+03 3.721e+03 9.500e+00 3.050e+01]
+ [1.530e+02 3.721e+03 6.400e+01 7.000e+00 4.000e+00]
+ [1.870e+02 2.116e+03 2.500e+01 5.000e-01 4.500e+00]
+ [2.770e+02 6.400e+01 3.721e+03 1.500e+00 9.500e+00]
+ [1.140e+02 2.500e+01 3.610e+02 5.500e+00 3.050e+01]
+ [2.560e+02 3.721e+03 1.521e+03 2.750e+01 5.000e+00]
+ [1.390e+02 3.600e+01 2.250e+02 3.050e+01 7.500e+00]
+ [3.837e+03 3.240e+02 2.250e+02 1.700e+01 1.250e+01]
+ [1.990e+02 4.410e+02 1.600e+01 2.500e+00 2.650e+01]
+ [3.160e+02 1.690e+02 2.916e+03 3.050e+01 3.050e+01]
+ [3.843e+03 8.100e+01 3.721e+03 6.000e+00 2.850e+01]
+ [1.645e+03 2.250e+02 3.721e+03 2.500e+00 2.300e+01]
+ [1.900e+02 4.410e+02 3.721e+03 3.000e+00 1.150e+01]
+ [1.530e+02 3.610e+02 2.116e+03 1.950e+01 5.000e-01]
+ [3.851e+03 3.721e+03 6.400e+01 3.050e+01 9.500e+00]
+ [6.610e+02 7.840e+02 2.500e+01 4.500e+00 3.050e+01]
+ [1.350e+02 1.000e+00 3.721e+03 1.950e+01 1.000e+00]
+ [1.400e+02 1.960e+02 1.296e+03 3.050e+01 9.000e+00]
+ [1.630e+02 1.600e+01 1.000e+00 2.000e+00 4.500e+00]
+ [4.236e+03 2.500e+01 4.000e+00 2.500e+00 6.000e+00]
+ [3.863e+03 3.240e+02 4.000e+00 5.000e-01 6.000e+00]
+ [8.730e+02 3.610e+02 2.500e+01 2.000e+00 4.500e+00]
+ [2.900e+02 1.960e+02 3.240e+02 2.700e+01 3.500e+00]
+ [2.920e+02 1.000e+00 5.290e+02 3.050e+01 2.700e+01]
+ [3.871e+03 1.521e+03 2.250e+02 5.000e-01 3.050e+01]
+ [3.210e+02 9.000e+00 9.000e+00 7.000e+00 5.000e-01]
+ [2.350e+02 6.400e+01 1.210e+02 2.000e+00 7.000e+00]
+ [3.250e+02 3.025e+03 2.916e+03 3.050e+01 2.000e+00]
+ [5.190e+02 3.364e+03 3.721e+03 1.150e+01 3.050e+01]
+ [7.850e+02 3.721e+03 5.290e+02 4.500e+00 1.950e+01]
+ [3.883e+03 1.156e+03 8.100e+01 1.950e+01 4.000e+00]
+ [6.930e+02 2.500e+01 1.521e+03 4.000e+00 2.500e+00]
+ [1.910e+02 3.721e+03 6.400e+01 3.050e+01 3.050e+01]
+ [4.920e+02 1.521e+03 6.100e+01 4.500e+00 9.500e+00]
+ [1.950e+02 2.250e+02 5.000e+00 1.950e+01 6.000e+00]
+ [3.893e+03 2.250e+02 2.500e+01 9.500e+00 4.500e+00]
+ [1.695e+03 1.210e+02 5.000e+00 3.050e+01 1.950e+01]
+ [2.400e+02 3.721e+03 1.900e+01 4.000e+00 4.000e+00]
+ [2.030e+02 6.400e+01 6.100e+01 2.500e+00 1.250e+01]
+ [3.901e+03 8.100e+01 1.500e+01 5.000e-01 3.050e+01]
+ [1.860e+02 3.610e+02 6.000e+00 2.000e+00 1.950e+01]
+ [4.090e+02 3.721e+03 6.100e+01 3.050e+01 7.500e+00]
+ [5.100e+02 4.840e+02 6.000e+00 3.050e+01 1.100e+01]
+ [4.130e+02 2.250e+02 1.200e+01 3.050e+01 2.500e+00]
+ [2.390e+02 3.240e+02 1.000e+00 1.700e+01 9.500e+00]
+ [4.170e+02 2.560e+02 1.300e+01 2.500e+00 3.050e+01]
+ [6.780e+02 1.000e+00 5.000e+00 3.050e+01 3.050e+01]
+ [2.210e+02 1.440e+02 5.400e+01 1.150e+01 3.050e+01]
+ [5.590e+02 3.721e+03 6.100e+01 2.500e+00 1.500e+01]
+ [3.116e+03 3.610e+02 2.900e+01 7.000e+00 4.500e+00]
+ [3.923e+03 5.290e+02 1.000e+00 1.950e+01 2.000e+00]
+ [3.925e+03 2.250e+02 1.300e+01 3.050e+01 3.050e+01]
+ [3.927e+03 3.240e+02 5.000e+00 3.500e+00 3.500e+00]
+ [9.370e+02 1.600e+01 6.100e+01 5.000e-01 1.250e+01]
+ [4.060e+02 3.721e+03 2.300e+01 6.000e+00 9.000e+00]
+ [2.280e+02 8.100e+01 8.000e+00 1.050e+01 2.500e+00]
+ [3.935e+03 1.960e+02 9.000e+00 6.500e+00 3.050e+01]
+ [1.737e+03 3.721e+03 6.000e+00 8.000e+00 5.000e-01]
+ [2.820e+02 6.400e+01 6.000e+00 4.000e+00 7.000e+00]
+ [2.450e+02 1.000e+00 1.200e+01 4.500e+00 2.000e+00]
+ [3.943e+03 1.960e+02 9.000e+00 7.000e+00 3.050e+01]
+ [3.930e+02 1.600e+01 1.400e+01 3.500e+00 3.500e+00]
+ [4.510e+02 3.969e+03 7.000e+00 3.050e+01 4.500e+00]
+ [3.970e+02 3.721e+03 6.100e+01 1.000e+00 6.500e+00]
+ [2.550e+02 3.721e+03 3.900e+01 5.000e-01 1.000e+00]
+ [3.953e+03 3.721e+03 8.000e+00 1.500e+00 6.000e+00]
+ [5.580e+02 1.444e+03 1.800e+01 5.500e+00 2.500e+00]
+ [2.370e+02 2.250e+02 1.500e+01 2.650e+01 3.050e+01]
+ [1.759e+03 1.960e+02 2.100e+01 3.050e+01 4.500e+00]
+ [3.040e+02 4.900e+01 7.000e+00 2.900e+01 7.000e+00]
+ [6.030e+02 3.721e+03 8.000e+00 1.350e+01 3.050e+01]
+ [3.965e+03 1.521e+03 6.100e+01 7.000e+00 1.950e+01]
+ [4.710e+02 8.100e+01 3.900e+01 2.000e+00 4.000e+00]
+ [6.890e+02 1.690e+02 8.000e+00 3.050e+01 2.500e+00]
+ [1.771e+03 2.500e+01 5.000e+00 4.000e+00 3.050e+01]
+ [3.010e+02 3.721e+03 6.100e+01 5.000e-01 1.150e+01]
+ [5.780e+02 1.521e+03 3.900e+01 9.500e+00 5.000e-01]
+ [2.570e+02 6.400e+01 2.100e+01 1.950e+01 1.000e+00]
+ [2.620e+02 2.500e+01 1.200e+01 3.050e+01 2.500e+00]
+ [2.850e+02 3.721e+03 7.000e+00 1.950e+01 3.200e+01]
+ [3.071e+03 1.690e+02 5.000e+00 4.000e+00 3.050e+01]
+ [3.985e+03 1.000e+00 2.500e+01 7.500e+00 1.350e+01]
+ [3.630e+03 1.960e+02 6.100e+01 1.050e+01 6.000e+00]
+ [1.052e+03 5.760e+02 2.300e+01 3.050e+01 6.000e+00]
+ [2.950e+02 2.250e+02 1.500e+01 9.500e+00 3.050e+01]
+ [8.010e+02 1.690e+02 1.500e+01 6.000e+00 6.500e+00]
+ [2.750e+02 2.500e+01 4.000e+00 5.000e-01 4.500e+00]
+ [6.000e+02 3.721e+03 5.400e+01 4.500e+00 6.500e+00]
+ [3.030e+02 3.600e+01 6.100e+01 7.000e+00 9.500e+00]
+ [4.001e+03 2.250e+02 6.100e+01 3.050e+01 1.250e+01]
+ [1.803e+03 2.500e+01 6.100e+01 1.950e+01 3.050e+01]
+ [3.480e+02 3.721e+03 2.700e+01 4.000e+00 1.150e+01]
+ [3.110e+02 6.400e+01 1.400e+01 2.500e+00 2.500e+00]
+ [4.009e+03 2.500e+01 4.000e+00 3.050e+01 9.000e+00]
+ [1.586e+03 3.721e+03 6.100e+01 1.800e+01 2.500e+00]
+ [2.930e+02 3.610e+02 2.000e+00 5.000e-01 3.050e+01]
+ [2.980e+02 2.250e+02 2.100e+01 1.000e+00 1.950e+01]
+ [3.000e+02 4.410e+02 1.800e+01 1.000e+00 4.000e+00]
+ [3.230e+02 4.900e+01 2.000e+00 2.500e+00 2.500e+00]
+ [6.240e+02 6.400e+01 1.200e+01 9.000e+00 3.050e+01]
+ [8.310e+02 1.521e+03 5.000e+00 1.150e+01 1.000e+00]
+ [5.290e+02 3.844e+03 4.000e+00 7.500e+00 7.500e+00]
+ [3.150e+02 3.721e+03 6.100e+01 1.500e+00 9.000e+00]
+ [4.290e+02 2.025e+03 1.000e+00 5.500e+00 7.500e+00]
+ [3.226e+03 2.250e+02 1.900e+01 2.800e+01 3.500e+00]
+ [4.033e+03 3.721e+03 6.100e+01 3.050e+01 7.500e+00]
+ [4.830e+02 3.240e+02 9.000e+00 3.050e+01 1.100e+01]
+ [9.410e+02 2.500e+01 3.900e+01 3.050e+01 2.500e+00]
+ [4.039e+03 3.610e+02 6.100e+01 1.450e+01 9.500e+00]
+ [6.810e+02 1.521e+03 3.000e+00 7.500e+00 2.700e+01]
+ [5.470e+02 2.500e+01 1.000e+00 6.500e+00 3.050e+01]
+ [5.200e+02 1.600e+01 1.300e+01 2.500e+00 3.050e+01]
+ [3.351e+03 3.721e+03 5.000e+00 3.050e+01 3.050e+01]
+ [4.049e+03 6.400e+01 5.500e+01 1.950e+01 1.350e+01]
+ [4.051e+03 2.500e+01 6.100e+01 7.500e+00 7.000e+00]
+ [4.053e+03 3.721e+03 4.100e+01 3.050e+01 2.000e+00]
+ [2.450e+03 4.000e+00 1.400e+01 6.500e+00 3.050e+01]
+ [4.000e+02 6.250e+02 5.000e+00 1.250e+01 1.950e+01]
+ [3.630e+02 3.721e+03 5.400e+01 3.050e+01 4.000e+00]
+ [4.061e+03 1.521e+03 6.100e+01 5.000e-01 2.500e+00]
+ [4.420e+02 6.400e+01 3.900e+01 9.000e+00 3.050e+01]
+ [3.450e+02 2.500e+01 2.300e+01 6.500e+00 6.500e+00]
+ [8.750e+02 3.721e+03 1.500e+01 9.500e+00 7.500e+00]
+ [7.090e+02 2.116e+03 5.500e+01 2.700e+01 6.500e+00]
+ [4.071e+03 4.410e+02 6.100e+01 3.050e+01 2.500e+00]
+ [1.873e+03 1.690e+02 4.100e+01 6.500e+00 3.050e+01]
+ [4.180e+02 1.521e+03 1.400e+01 1.250e+01 9.000e+00]
+ [3.570e+02 4.410e+02 5.000e+00 3.050e+01 5.000e-01]
+ [1.879e+03 1.690e+02 5.400e+01 1.000e+00 1.950e+01]
+ [4.081e+03 3.721e+03 6.100e+01 2.500e+00 4.000e+00]
+ [3.660e+02 1.521e+03 3.900e+01 5.000e-01 9.500e+00]
+ [4.450e+02 3.240e+02 2.300e+01 6.500e+00 3.050e+01]
+ [1.887e+03 2.500e+01 1.500e+01 4.500e+00 7.500e+00]
+ [3.930e+02 2.500e+01 5.500e+01 9.500e+00 1.050e+01]
+ [3.286e+03 3.721e+03 6.100e+01 4.000e+00 1.950e+01]
+ [4.093e+03 3.721e+03 2.700e+01 3.050e+01 3.500e+00]
+ [1.895e+03 3.721e+03 1.400e+01 1.000e+00 9.000e+00]
+ [4.400e+02 7.290e+02 4.000e+00 7.500e+00 5.000e-01]
+ [4.030e+02 1.960e+02 6.100e+01 1.250e+01 1.000e+00]
+ [4.101e+03 1.600e+01 3.900e+01 2.750e+01 2.500e+00]
+ [3.910e+02 3.721e+03 8.000e+00 3.050e+01 2.650e+01]]</code></pre>
+</div>
+</div>
+<div id="cell-17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="32edcbeb-6545-4021-d027-f0e8962ff640" data-execution_count="41">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>evens <span class="op">=</span> np.arange(<span class="dv">2</span>, <span class="dv">384</span>, <span class="dv">2</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#np.arange(start, stop, step)</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(evens)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[  2   4   6   8  10  12  14  16  18  20  22  24  26  28  30  32  34  36
+  38  40  42  44  46  48  50  52  54  56  58  60  62  64  66  68  70  72
+  74  76  78  80  82  84  86  88  90  92  94  96  98 100 102 104 106 108
+ 110 112 114 116 118 120 122 124 126 128 130 132 134 136 138 140 142 144
+ 146 148 150 152 154 156 158 160 162 164 166 168 170 172 174 176 178 180
+ 182 184 186 188 190 192 194 196 198 200 202 204 206 208 210 212 214 216
+ 218 220 222 224 226 228 230 232 234 236 238 240 242 244 246 248 250 252
+ 254 256 258 260 262 264 266 268 270 272 274 276 278 280 282 284 286 288
+ 290 292 294 296 298 300 302 304 306 308 310 312 314 316 318 320 322 324
+ 326 328 330 332 334 336 338 340 342 344 346 348 350 352 354 356 358 360
+ 362 364 366 368 370 372 374 376 378 380 382]</code></pre>
+</div>
+</div>
+<div id="cell-18" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="43bbe1cf-bd82-4ee1-c81d-2e1167eb553f" data-execution_count="26">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#subtract evens from first column</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>matrix[:, <span class="dv">0</span>] <span class="op">=</span> matrix[:, <span class="dv">0</span>] <span class="op">-</span> evens</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(matrix)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[5.700e+01 1.440e+02 3.610e+02 9.000e+00 2.050e+01]
+ [4.600e+01 1.000e+00 1.521e+03 7.500e+00 3.050e+01]
+ [2.300e+01 5.290e+02 2.250e+02 1.050e+01 3.000e+00]
+ [1.000e+00 3.610e+02 2.250e+02 3.500e+00 9.000e+00]
+ [1.900e+01 3.721e+03 1.600e+01 4.000e+00 5.000e-01]
+ [6.100e+01 1.521e+03 3.721e+03 3.050e+01 1.000e+00]
+ [2.000e+00 6.400e+01 1.000e+00 5.000e-01 5.000e+00]
+ [1.800e+01 1.000e+00 5.290e+02 7.000e+00 7.500e+00]
+ [9.000e+00 1.521e+03 6.400e+01 2.000e+00 1.050e+01]
+ [1.200e+01 3.721e+03 8.100e+01 3.050e+01 9.500e+00]
+ [1.200e+01 9.000e+00 1.440e+02 1.950e+01 3.050e+01]
+ [9.000e+00 1.000e+00 2.500e+01 4.000e+00 2.000e+00]
+ [7.000e+00 1.521e+03 3.721e+03 9.000e+00 5.000e-01]
+ [5.400e+01 9.000e+00 8.100e+01 7.500e+00 1.250e+01]
+ [6.100e+01 6.400e+01 1.960e+02 1.050e+01 2.750e+01]
+ [1.000e+00 3.025e+03 3.721e+03 3.500e+00 3.050e+01]
+ [1.400e+01 3.721e+03 1.521e+03 4.000e+00 1.450e+01]
+ [4.000e+00 7.840e+02 1.640e+02 3.050e+01 5.000e-01]
+ [6.100e+01 2.500e+01 3.250e+02 3.050e+01 6.000e+00]
+ [3.900e+01 5.290e+02 5.410e+02 3.050e+01 6.000e+00]
+ [8.000e+00 1.000e+00 1.490e+02 2.300e+01 7.500e+00]
+ [5.000e+00 3.240e+02 1.640e+02 4.000e+00 7.500e+00]
+ [6.100e+01 2.500e+01 1.621e+03 2.500e+00 4.000e+00]
+ [1.900e+01 3.721e+03 2.909e+03 3.050e+01 2.750e+01]
+ [1.200e+01 1.521e+03 3.721e+03 1.100e+01 3.050e+01]
+ [9.000e+00 6.400e+01 7.290e+02 7.500e+00 1.450e+01]
+ [3.900e+01 2.500e+01 1.960e+02 9.000e+00 5.000e-01]
+ [8.000e+00 3.721e+03 1.600e+01 8.000e+00 6.000e+00]
+ [2.500e+01 1.296e+03 2.916e+03 5.000e-01 6.000e+00]
+ [6.100e+01 4.410e+02 3.721e+03 6.000e+00 5.000e-01]
+ [3.900e+01 4.000e+00 1.000e+00 3.050e+01 1.250e+01]
+ [1.500e+01 1.000e+02 3.610e+02 1.000e+00 2.750e+01]
+ [2.200e+01 4.410e+02 3.721e+03 6.000e+00 2.900e+01]
+ [5.000e+00 4.000e+00 8.100e+01 5.000e-01 3.050e+01]
+ [1.900e+01 3.721e+03 1.960e+02 2.000e+00 3.050e+01]
+ [6.100e+01 4.000e+00 3.721e+03 2.500e+00 3.050e+01]
+ [6.100e+01 8.100e+01 4.410e+02 3.050e+01 1.700e+01]
+ [3.721e+03 3.240e+02 3.600e+01 1.150e+01 2.500e+00]
+ [9.000e+02 1.600e+01 3.600e+01 2.500e+00 3.050e+01]
+ [8.100e+01 2.916e+03 8.100e+01 7.000e+00 1.500e+00]
+ [1.600e+01 3.721e+03 3.610e+02 1.950e+01 4.000e+00]
+ [3.721e+03 1.000e+00 6.400e+01 3.050e+01 7.500e+00]
+ [4.900e+01 1.960e+02 3.721e+03 9.500e+00 9.000e+00]
+ [6.250e+02 1.600e+01 1.521e+03 7.000e+00 1.950e+01]
+ [3.240e+02 3.721e+03 6.400e+01 4.500e+00 6.000e+00]
+ [2.500e+01 3.610e+02 2.250e+02 1.500e+00 2.500e+00]
+ [3.721e+03 6.400e+01 4.410e+02 5.500e+00 2.000e+00]
+ [1.000e+00 4.410e+02 4.900e+01 2.500e+00 3.050e+01]
+ [1.960e+02 1.960e+02 6.400e+01 9.000e+00 4.500e+00]
+ [1.600e+01 3.721e+03 1.521e+03 3.100e+01 7.000e+00]
+ [3.721e+03 3.721e+03 3.721e+03 9.500e+00 3.050e+01]
+ [4.900e+01 3.721e+03 6.400e+01 7.000e+00 4.000e+00]
+ [8.100e+01 2.116e+03 2.500e+01 5.000e-01 4.500e+00]
+ [1.690e+02 6.400e+01 3.721e+03 1.500e+00 9.500e+00]
+ [4.000e+00 2.500e+01 3.610e+02 5.500e+00 3.050e+01]
+ [1.440e+02 3.721e+03 1.521e+03 2.750e+01 5.000e+00]
+ [2.500e+01 3.600e+01 2.250e+02 3.050e+01 7.500e+00]
+ [3.721e+03 3.240e+02 2.250e+02 1.700e+01 1.250e+01]
+ [8.100e+01 4.410e+02 1.600e+01 2.500e+00 2.650e+01]
+ [1.960e+02 1.690e+02 2.916e+03 3.050e+01 3.050e+01]
+ [3.721e+03 8.100e+01 3.721e+03 6.000e+00 2.850e+01]
+ [1.521e+03 2.250e+02 3.721e+03 2.500e+00 2.300e+01]
+ [6.400e+01 4.410e+02 3.721e+03 3.000e+00 1.150e+01]
+ [2.500e+01 3.610e+02 2.116e+03 1.950e+01 5.000e-01]
+ [3.721e+03 3.721e+03 6.400e+01 3.050e+01 9.500e+00]
+ [5.290e+02 7.840e+02 2.500e+01 4.500e+00 3.050e+01]
+ [1.000e+00 1.000e+00 3.721e+03 1.950e+01 1.000e+00]
+ [4.000e+00 1.960e+02 1.296e+03 3.050e+01 9.000e+00]
+ [2.500e+01 1.600e+01 1.000e+00 2.000e+00 4.500e+00]
+ [4.096e+03 2.500e+01 4.000e+00 2.500e+00 6.000e+00]
+ [3.721e+03 3.240e+02 4.000e+00 5.000e-01 6.000e+00]
+ [7.290e+02 3.610e+02 2.500e+01 2.000e+00 4.500e+00]
+ [1.440e+02 1.960e+02 3.240e+02 2.700e+01 3.500e+00]
+ [1.440e+02 1.000e+00 5.290e+02 3.050e+01 2.700e+01]
+ [3.721e+03 1.521e+03 2.250e+02 5.000e-01 3.050e+01]
+ [1.690e+02 9.000e+00 9.000e+00 7.000e+00 5.000e-01]
+ [8.100e+01 6.400e+01 1.210e+02 2.000e+00 7.000e+00]
+ [1.690e+02 3.025e+03 2.916e+03 3.050e+01 2.000e+00]
+ [3.610e+02 3.364e+03 3.721e+03 1.150e+01 3.050e+01]
+ [6.250e+02 3.721e+03 5.290e+02 4.500e+00 1.950e+01]
+ [3.721e+03 1.156e+03 8.100e+01 1.950e+01 4.000e+00]
+ [5.290e+02 2.500e+01 1.521e+03 4.000e+00 2.500e+00]
+ [2.500e+01 3.721e+03 6.400e+01 3.050e+01 3.050e+01]
+ [3.240e+02 1.521e+03 6.100e+01 4.500e+00 9.500e+00]
+ [2.500e+01 2.250e+02 5.000e+00 1.950e+01 6.000e+00]
+ [3.721e+03 2.250e+02 2.500e+01 9.500e+00 4.500e+00]
+ [1.521e+03 1.210e+02 5.000e+00 3.050e+01 1.950e+01]
+ [6.400e+01 3.721e+03 1.900e+01 4.000e+00 4.000e+00]
+ [2.500e+01 6.400e+01 6.100e+01 2.500e+00 1.250e+01]
+ [3.721e+03 8.100e+01 1.500e+01 5.000e-01 3.050e+01]
+ [4.000e+00 3.610e+02 6.000e+00 2.000e+00 1.950e+01]
+ [2.250e+02 3.721e+03 6.100e+01 3.050e+01 7.500e+00]
+ [3.240e+02 4.840e+02 6.000e+00 3.050e+01 1.100e+01]
+ [2.250e+02 2.250e+02 1.200e+01 3.050e+01 2.500e+00]
+ [4.900e+01 3.240e+02 1.000e+00 1.700e+01 9.500e+00]
+ [2.250e+02 2.560e+02 1.300e+01 2.500e+00 3.050e+01]
+ [4.840e+02 1.000e+00 5.000e+00 3.050e+01 3.050e+01]
+ [2.500e+01 1.440e+02 5.400e+01 1.150e+01 3.050e+01]
+ [3.610e+02 3.721e+03 6.100e+01 2.500e+00 1.500e+01]
+ [2.916e+03 3.610e+02 2.900e+01 7.000e+00 4.500e+00]
+ [3.721e+03 5.290e+02 1.000e+00 1.950e+01 2.000e+00]
+ [3.721e+03 2.250e+02 1.300e+01 3.050e+01 3.050e+01]
+ [3.721e+03 3.240e+02 5.000e+00 3.500e+00 3.500e+00]
+ [7.290e+02 1.600e+01 6.100e+01 5.000e-01 1.250e+01]
+ [1.960e+02 3.721e+03 2.300e+01 6.000e+00 9.000e+00]
+ [1.600e+01 8.100e+01 8.000e+00 1.050e+01 2.500e+00]
+ [3.721e+03 1.960e+02 9.000e+00 6.500e+00 3.050e+01]
+ [1.521e+03 3.721e+03 6.000e+00 8.000e+00 5.000e-01]
+ [6.400e+01 6.400e+01 6.000e+00 4.000e+00 7.000e+00]
+ [2.500e+01 1.000e+00 1.200e+01 4.500e+00 2.000e+00]
+ [3.721e+03 1.960e+02 9.000e+00 7.000e+00 3.050e+01]
+ [1.690e+02 1.600e+01 1.400e+01 3.500e+00 3.500e+00]
+ [2.250e+02 3.969e+03 7.000e+00 3.050e+01 4.500e+00]
+ [1.690e+02 3.721e+03 6.100e+01 1.000e+00 6.500e+00]
+ [2.500e+01 3.721e+03 3.900e+01 5.000e-01 1.000e+00]
+ [3.721e+03 3.721e+03 8.000e+00 1.500e+00 6.000e+00]
+ [3.240e+02 1.444e+03 1.800e+01 5.500e+00 2.500e+00]
+ [1.000e+00 2.250e+02 1.500e+01 2.650e+01 3.050e+01]
+ [1.521e+03 1.960e+02 2.100e+01 3.050e+01 4.500e+00]
+ [6.400e+01 4.900e+01 7.000e+00 2.900e+01 7.000e+00]
+ [3.610e+02 3.721e+03 8.000e+00 1.350e+01 3.050e+01]
+ [3.721e+03 1.521e+03 6.100e+01 7.000e+00 1.950e+01]
+ [2.250e+02 8.100e+01 3.900e+01 2.000e+00 4.000e+00]
+ [4.410e+02 1.690e+02 8.000e+00 3.050e+01 2.500e+00]
+ [1.521e+03 2.500e+01 5.000e+00 4.000e+00 3.050e+01]
+ [4.900e+01 3.721e+03 6.100e+01 5.000e-01 1.150e+01]
+ [3.240e+02 1.521e+03 3.900e+01 9.500e+00 5.000e-01]
+ [1.000e+00 6.400e+01 2.100e+01 1.950e+01 1.000e+00]
+ [4.000e+00 2.500e+01 1.200e+01 3.050e+01 2.500e+00]
+ [2.500e+01 3.721e+03 7.000e+00 1.950e+01 3.200e+01]
+ [2.809e+03 1.690e+02 5.000e+00 4.000e+00 3.050e+01]
+ [3.721e+03 1.000e+00 2.500e+01 7.500e+00 1.350e+01]
+ [3.364e+03 1.960e+02 6.100e+01 1.050e+01 6.000e+00]
+ [7.840e+02 5.760e+02 2.300e+01 3.050e+01 6.000e+00]
+ [2.500e+01 2.250e+02 1.500e+01 9.500e+00 3.050e+01]
+ [5.290e+02 1.690e+02 1.500e+01 6.000e+00 6.500e+00]
+ [1.000e+00 2.500e+01 4.000e+00 5.000e-01 4.500e+00]
+ [3.240e+02 3.721e+03 5.400e+01 4.500e+00 6.500e+00]
+ [2.500e+01 3.600e+01 6.100e+01 7.000e+00 9.500e+00]
+ [3.721e+03 2.250e+02 6.100e+01 3.050e+01 1.250e+01]
+ [1.521e+03 2.500e+01 6.100e+01 1.950e+01 3.050e+01]
+ [6.400e+01 3.721e+03 2.700e+01 4.000e+00 1.150e+01]
+ [2.500e+01 6.400e+01 1.400e+01 2.500e+00 2.500e+00]
+ [3.721e+03 2.500e+01 4.000e+00 3.050e+01 9.000e+00]
+ [1.296e+03 3.721e+03 6.100e+01 1.800e+01 2.500e+00]
+ [1.000e+00 3.610e+02 2.000e+00 5.000e-01 3.050e+01]
+ [4.000e+00 2.250e+02 2.100e+01 1.000e+00 1.950e+01]
+ [4.000e+00 4.410e+02 1.800e+01 1.000e+00 4.000e+00]
+ [2.500e+01 4.900e+01 2.000e+00 2.500e+00 2.500e+00]
+ [3.240e+02 6.400e+01 1.200e+01 9.000e+00 3.050e+01]
+ [5.290e+02 1.521e+03 5.000e+00 1.150e+01 1.000e+00]
+ [2.250e+02 3.844e+03 4.000e+00 7.500e+00 7.500e+00]
+ [9.000e+00 3.721e+03 6.100e+01 1.500e+00 9.000e+00]
+ [1.210e+02 2.025e+03 1.000e+00 5.500e+00 7.500e+00]
+ [2.916e+03 2.250e+02 1.900e+01 2.800e+01 3.500e+00]
+ [3.721e+03 3.721e+03 6.100e+01 3.050e+01 7.500e+00]
+ [1.690e+02 3.240e+02 9.000e+00 3.050e+01 1.100e+01]
+ [6.250e+02 2.500e+01 3.900e+01 3.050e+01 2.500e+00]
+ [3.721e+03 3.610e+02 6.100e+01 1.450e+01 9.500e+00]
+ [3.610e+02 1.521e+03 3.000e+00 7.500e+00 2.700e+01]
+ [2.250e+02 2.500e+01 1.000e+00 6.500e+00 3.050e+01]
+ [1.960e+02 1.600e+01 1.300e+01 2.500e+00 3.050e+01]
+ [3.025e+03 3.721e+03 5.000e+00 3.050e+01 3.050e+01]
+ [3.721e+03 6.400e+01 5.500e+01 1.950e+01 1.350e+01]
+ [3.721e+03 2.500e+01 6.100e+01 7.500e+00 7.000e+00]
+ [3.721e+03 3.721e+03 4.100e+01 3.050e+01 2.000e+00]
+ [2.116e+03 4.000e+00 1.400e+01 6.500e+00 3.050e+01]
+ [6.400e+01 6.250e+02 5.000e+00 1.250e+01 1.950e+01]
+ [2.500e+01 3.721e+03 5.400e+01 3.050e+01 4.000e+00]
+ [3.721e+03 1.521e+03 6.100e+01 5.000e-01 2.500e+00]
+ [1.000e+02 6.400e+01 3.900e+01 9.000e+00 3.050e+01]
+ [1.000e+00 2.500e+01 2.300e+01 6.500e+00 6.500e+00]
+ [5.290e+02 3.721e+03 1.500e+01 9.500e+00 7.500e+00]
+ [3.610e+02 2.116e+03 5.500e+01 2.700e+01 6.500e+00]
+ [3.721e+03 4.410e+02 6.100e+01 3.050e+01 2.500e+00]
+ [1.521e+03 1.690e+02 4.100e+01 6.500e+00 3.050e+01]
+ [6.400e+01 1.521e+03 1.400e+01 1.250e+01 9.000e+00]
+ [1.000e+00 4.410e+02 5.000e+00 3.050e+01 5.000e-01]
+ [1.521e+03 1.690e+02 5.400e+01 1.000e+00 1.950e+01]
+ [3.721e+03 3.721e+03 6.100e+01 2.500e+00 4.000e+00]
+ [4.000e+00 1.521e+03 3.900e+01 5.000e-01 9.500e+00]
+ [8.100e+01 3.240e+02 2.300e+01 6.500e+00 3.050e+01]
+ [1.521e+03 2.500e+01 1.500e+01 4.500e+00 7.500e+00]
+ [2.500e+01 2.500e+01 5.500e+01 9.500e+00 1.050e+01]
+ [2.916e+03 3.721e+03 6.100e+01 4.000e+00 1.950e+01]
+ [3.721e+03 3.721e+03 2.700e+01 3.050e+01 3.500e+00]
+ [1.521e+03 3.721e+03 1.400e+01 1.000e+00 9.000e+00]
+ [6.400e+01 7.290e+02 4.000e+00 7.500e+00 5.000e-01]
+ [2.500e+01 1.960e+02 6.100e+01 1.250e+01 1.000e+00]
+ [3.721e+03 1.600e+01 3.900e+01 2.750e+01 2.500e+00]
+ [9.000e+00 3.721e+03 8.000e+00 3.050e+01 2.650e+01]]</code></pre>
+</div>
+</div>
+<div id="cell-19" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="2ee098a6-4416-4673-f798-e8d15a3c36bb" data-execution_count="27">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(matrix[:, <span class="dv">0</span>]), <span class="bu">len</span>(evens))</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">#both must be the same length to subtract</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>191 191</code></pre>
+</div>
+</div>
+<div id="cell-20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="94b3a150-8f7e-409b-bc00-1133136b73e0" data-execution_count="28">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>matrix[<span class="dv">17</span>:<span class="dv">24</span>, <span class="dv">2</span>] <span class="op">=</span> matrix[<span class="dv">17</span>:<span class="dv">24</span>, <span class="dv">2</span>] <span class="op">-</span> <span class="dv">100</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(matrix)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[5.700e+01 1.440e+02 3.610e+02 9.000e+00 2.050e+01]
+ [4.600e+01 1.000e+00 1.521e+03 7.500e+00 3.050e+01]
+ [2.300e+01 5.290e+02 2.250e+02 1.050e+01 3.000e+00]
+ [1.000e+00 3.610e+02 2.250e+02 3.500e+00 9.000e+00]
+ [1.900e+01 3.721e+03 1.600e+01 4.000e+00 5.000e-01]
+ [6.100e+01 1.521e+03 3.721e+03 3.050e+01 1.000e+00]
+ [2.000e+00 6.400e+01 1.000e+00 5.000e-01 5.000e+00]
+ [1.800e+01 1.000e+00 5.290e+02 7.000e+00 7.500e+00]
+ [9.000e+00 1.521e+03 6.400e+01 2.000e+00 1.050e+01]
+ [1.200e+01 3.721e+03 8.100e+01 3.050e+01 9.500e+00]
+ [1.200e+01 9.000e+00 1.440e+02 1.950e+01 3.050e+01]
+ [9.000e+00 1.000e+00 2.500e+01 4.000e+00 2.000e+00]
+ [7.000e+00 1.521e+03 3.721e+03 9.000e+00 5.000e-01]
+ [5.400e+01 9.000e+00 8.100e+01 7.500e+00 1.250e+01]
+ [6.100e+01 6.400e+01 1.960e+02 1.050e+01 2.750e+01]
+ [1.000e+00 3.025e+03 3.721e+03 3.500e+00 3.050e+01]
+ [1.400e+01 3.721e+03 1.521e+03 4.000e+00 1.450e+01]
+ [4.000e+00 7.840e+02 6.400e+01 3.050e+01 5.000e-01]
+ [6.100e+01 2.500e+01 2.250e+02 3.050e+01 6.000e+00]
+ [3.900e+01 5.290e+02 4.410e+02 3.050e+01 6.000e+00]
+ [8.000e+00 1.000e+00 4.900e+01 2.300e+01 7.500e+00]
+ [5.000e+00 3.240e+02 6.400e+01 4.000e+00 7.500e+00]
+ [6.100e+01 2.500e+01 1.521e+03 2.500e+00 4.000e+00]
+ [1.900e+01 3.721e+03 2.809e+03 3.050e+01 2.750e+01]
+ [1.200e+01 1.521e+03 3.721e+03 1.100e+01 3.050e+01]
+ [9.000e+00 6.400e+01 7.290e+02 7.500e+00 1.450e+01]
+ [3.900e+01 2.500e+01 1.960e+02 9.000e+00 5.000e-01]
+ [8.000e+00 3.721e+03 1.600e+01 8.000e+00 6.000e+00]
+ [2.500e+01 1.296e+03 2.916e+03 5.000e-01 6.000e+00]
+ [6.100e+01 4.410e+02 3.721e+03 6.000e+00 5.000e-01]
+ [3.900e+01 4.000e+00 1.000e+00 3.050e+01 1.250e+01]
+ [1.500e+01 1.000e+02 3.610e+02 1.000e+00 2.750e+01]
+ [2.200e+01 4.410e+02 3.721e+03 6.000e+00 2.900e+01]
+ [5.000e+00 4.000e+00 8.100e+01 5.000e-01 3.050e+01]
+ [1.900e+01 3.721e+03 1.960e+02 2.000e+00 3.050e+01]
+ [6.100e+01 4.000e+00 3.721e+03 2.500e+00 3.050e+01]
+ [6.100e+01 8.100e+01 4.410e+02 3.050e+01 1.700e+01]
+ [3.721e+03 3.240e+02 3.600e+01 1.150e+01 2.500e+00]
+ [9.000e+02 1.600e+01 3.600e+01 2.500e+00 3.050e+01]
+ [8.100e+01 2.916e+03 8.100e+01 7.000e+00 1.500e+00]
+ [1.600e+01 3.721e+03 3.610e+02 1.950e+01 4.000e+00]
+ [3.721e+03 1.000e+00 6.400e+01 3.050e+01 7.500e+00]
+ [4.900e+01 1.960e+02 3.721e+03 9.500e+00 9.000e+00]
+ [6.250e+02 1.600e+01 1.521e+03 7.000e+00 1.950e+01]
+ [3.240e+02 3.721e+03 6.400e+01 4.500e+00 6.000e+00]
+ [2.500e+01 3.610e+02 2.250e+02 1.500e+00 2.500e+00]
+ [3.721e+03 6.400e+01 4.410e+02 5.500e+00 2.000e+00]
+ [1.000e+00 4.410e+02 4.900e+01 2.500e+00 3.050e+01]
+ [1.960e+02 1.960e+02 6.400e+01 9.000e+00 4.500e+00]
+ [1.600e+01 3.721e+03 1.521e+03 3.100e+01 7.000e+00]
+ [3.721e+03 3.721e+03 3.721e+03 9.500e+00 3.050e+01]
+ [4.900e+01 3.721e+03 6.400e+01 7.000e+00 4.000e+00]
+ [8.100e+01 2.116e+03 2.500e+01 5.000e-01 4.500e+00]
+ [1.690e+02 6.400e+01 3.721e+03 1.500e+00 9.500e+00]
+ [4.000e+00 2.500e+01 3.610e+02 5.500e+00 3.050e+01]
+ [1.440e+02 3.721e+03 1.521e+03 2.750e+01 5.000e+00]
+ [2.500e+01 3.600e+01 2.250e+02 3.050e+01 7.500e+00]
+ [3.721e+03 3.240e+02 2.250e+02 1.700e+01 1.250e+01]
+ [8.100e+01 4.410e+02 1.600e+01 2.500e+00 2.650e+01]
+ [1.960e+02 1.690e+02 2.916e+03 3.050e+01 3.050e+01]
+ [3.721e+03 8.100e+01 3.721e+03 6.000e+00 2.850e+01]
+ [1.521e+03 2.250e+02 3.721e+03 2.500e+00 2.300e+01]
+ [6.400e+01 4.410e+02 3.721e+03 3.000e+00 1.150e+01]
+ [2.500e+01 3.610e+02 2.116e+03 1.950e+01 5.000e-01]
+ [3.721e+03 3.721e+03 6.400e+01 3.050e+01 9.500e+00]
+ [5.290e+02 7.840e+02 2.500e+01 4.500e+00 3.050e+01]
+ [1.000e+00 1.000e+00 3.721e+03 1.950e+01 1.000e+00]
+ [4.000e+00 1.960e+02 1.296e+03 3.050e+01 9.000e+00]
+ [2.500e+01 1.600e+01 1.000e+00 2.000e+00 4.500e+00]
+ [4.096e+03 2.500e+01 4.000e+00 2.500e+00 6.000e+00]
+ [3.721e+03 3.240e+02 4.000e+00 5.000e-01 6.000e+00]
+ [7.290e+02 3.610e+02 2.500e+01 2.000e+00 4.500e+00]
+ [1.440e+02 1.960e+02 3.240e+02 2.700e+01 3.500e+00]
+ [1.440e+02 1.000e+00 5.290e+02 3.050e+01 2.700e+01]
+ [3.721e+03 1.521e+03 2.250e+02 5.000e-01 3.050e+01]
+ [1.690e+02 9.000e+00 9.000e+00 7.000e+00 5.000e-01]
+ [8.100e+01 6.400e+01 1.210e+02 2.000e+00 7.000e+00]
+ [1.690e+02 3.025e+03 2.916e+03 3.050e+01 2.000e+00]
+ [3.610e+02 3.364e+03 3.721e+03 1.150e+01 3.050e+01]
+ [6.250e+02 3.721e+03 5.290e+02 4.500e+00 1.950e+01]
+ [3.721e+03 1.156e+03 8.100e+01 1.950e+01 4.000e+00]
+ [5.290e+02 2.500e+01 1.521e+03 4.000e+00 2.500e+00]
+ [2.500e+01 3.721e+03 6.400e+01 3.050e+01 3.050e+01]
+ [3.240e+02 1.521e+03 6.100e+01 4.500e+00 9.500e+00]
+ [2.500e+01 2.250e+02 5.000e+00 1.950e+01 6.000e+00]
+ [3.721e+03 2.250e+02 2.500e+01 9.500e+00 4.500e+00]
+ [1.521e+03 1.210e+02 5.000e+00 3.050e+01 1.950e+01]
+ [6.400e+01 3.721e+03 1.900e+01 4.000e+00 4.000e+00]
+ [2.500e+01 6.400e+01 6.100e+01 2.500e+00 1.250e+01]
+ [3.721e+03 8.100e+01 1.500e+01 5.000e-01 3.050e+01]
+ [4.000e+00 3.610e+02 6.000e+00 2.000e+00 1.950e+01]
+ [2.250e+02 3.721e+03 6.100e+01 3.050e+01 7.500e+00]
+ [3.240e+02 4.840e+02 6.000e+00 3.050e+01 1.100e+01]
+ [2.250e+02 2.250e+02 1.200e+01 3.050e+01 2.500e+00]
+ [4.900e+01 3.240e+02 1.000e+00 1.700e+01 9.500e+00]
+ [2.250e+02 2.560e+02 1.300e+01 2.500e+00 3.050e+01]
+ [4.840e+02 1.000e+00 5.000e+00 3.050e+01 3.050e+01]
+ [2.500e+01 1.440e+02 5.400e+01 1.150e+01 3.050e+01]
+ [3.610e+02 3.721e+03 6.100e+01 2.500e+00 1.500e+01]
+ [2.916e+03 3.610e+02 2.900e+01 7.000e+00 4.500e+00]
+ [3.721e+03 5.290e+02 1.000e+00 1.950e+01 2.000e+00]
+ [3.721e+03 2.250e+02 1.300e+01 3.050e+01 3.050e+01]
+ [3.721e+03 3.240e+02 5.000e+00 3.500e+00 3.500e+00]
+ [7.290e+02 1.600e+01 6.100e+01 5.000e-01 1.250e+01]
+ [1.960e+02 3.721e+03 2.300e+01 6.000e+00 9.000e+00]
+ [1.600e+01 8.100e+01 8.000e+00 1.050e+01 2.500e+00]
+ [3.721e+03 1.960e+02 9.000e+00 6.500e+00 3.050e+01]
+ [1.521e+03 3.721e+03 6.000e+00 8.000e+00 5.000e-01]
+ [6.400e+01 6.400e+01 6.000e+00 4.000e+00 7.000e+00]
+ [2.500e+01 1.000e+00 1.200e+01 4.500e+00 2.000e+00]
+ [3.721e+03 1.960e+02 9.000e+00 7.000e+00 3.050e+01]
+ [1.690e+02 1.600e+01 1.400e+01 3.500e+00 3.500e+00]
+ [2.250e+02 3.969e+03 7.000e+00 3.050e+01 4.500e+00]
+ [1.690e+02 3.721e+03 6.100e+01 1.000e+00 6.500e+00]
+ [2.500e+01 3.721e+03 3.900e+01 5.000e-01 1.000e+00]
+ [3.721e+03 3.721e+03 8.000e+00 1.500e+00 6.000e+00]
+ [3.240e+02 1.444e+03 1.800e+01 5.500e+00 2.500e+00]
+ [1.000e+00 2.250e+02 1.500e+01 2.650e+01 3.050e+01]
+ [1.521e+03 1.960e+02 2.100e+01 3.050e+01 4.500e+00]
+ [6.400e+01 4.900e+01 7.000e+00 2.900e+01 7.000e+00]
+ [3.610e+02 3.721e+03 8.000e+00 1.350e+01 3.050e+01]
+ [3.721e+03 1.521e+03 6.100e+01 7.000e+00 1.950e+01]
+ [2.250e+02 8.100e+01 3.900e+01 2.000e+00 4.000e+00]
+ [4.410e+02 1.690e+02 8.000e+00 3.050e+01 2.500e+00]
+ [1.521e+03 2.500e+01 5.000e+00 4.000e+00 3.050e+01]
+ [4.900e+01 3.721e+03 6.100e+01 5.000e-01 1.150e+01]
+ [3.240e+02 1.521e+03 3.900e+01 9.500e+00 5.000e-01]
+ [1.000e+00 6.400e+01 2.100e+01 1.950e+01 1.000e+00]
+ [4.000e+00 2.500e+01 1.200e+01 3.050e+01 2.500e+00]
+ [2.500e+01 3.721e+03 7.000e+00 1.950e+01 3.200e+01]
+ [2.809e+03 1.690e+02 5.000e+00 4.000e+00 3.050e+01]
+ [3.721e+03 1.000e+00 2.500e+01 7.500e+00 1.350e+01]
+ [3.364e+03 1.960e+02 6.100e+01 1.050e+01 6.000e+00]
+ [7.840e+02 5.760e+02 2.300e+01 3.050e+01 6.000e+00]
+ [2.500e+01 2.250e+02 1.500e+01 9.500e+00 3.050e+01]
+ [5.290e+02 1.690e+02 1.500e+01 6.000e+00 6.500e+00]
+ [1.000e+00 2.500e+01 4.000e+00 5.000e-01 4.500e+00]
+ [3.240e+02 3.721e+03 5.400e+01 4.500e+00 6.500e+00]
+ [2.500e+01 3.600e+01 6.100e+01 7.000e+00 9.500e+00]
+ [3.721e+03 2.250e+02 6.100e+01 3.050e+01 1.250e+01]
+ [1.521e+03 2.500e+01 6.100e+01 1.950e+01 3.050e+01]
+ [6.400e+01 3.721e+03 2.700e+01 4.000e+00 1.150e+01]
+ [2.500e+01 6.400e+01 1.400e+01 2.500e+00 2.500e+00]
+ [3.721e+03 2.500e+01 4.000e+00 3.050e+01 9.000e+00]
+ [1.296e+03 3.721e+03 6.100e+01 1.800e+01 2.500e+00]
+ [1.000e+00 3.610e+02 2.000e+00 5.000e-01 3.050e+01]
+ [4.000e+00 2.250e+02 2.100e+01 1.000e+00 1.950e+01]
+ [4.000e+00 4.410e+02 1.800e+01 1.000e+00 4.000e+00]
+ [2.500e+01 4.900e+01 2.000e+00 2.500e+00 2.500e+00]
+ [3.240e+02 6.400e+01 1.200e+01 9.000e+00 3.050e+01]
+ [5.290e+02 1.521e+03 5.000e+00 1.150e+01 1.000e+00]
+ [2.250e+02 3.844e+03 4.000e+00 7.500e+00 7.500e+00]
+ [9.000e+00 3.721e+03 6.100e+01 1.500e+00 9.000e+00]
+ [1.210e+02 2.025e+03 1.000e+00 5.500e+00 7.500e+00]
+ [2.916e+03 2.250e+02 1.900e+01 2.800e+01 3.500e+00]
+ [3.721e+03 3.721e+03 6.100e+01 3.050e+01 7.500e+00]
+ [1.690e+02 3.240e+02 9.000e+00 3.050e+01 1.100e+01]
+ [6.250e+02 2.500e+01 3.900e+01 3.050e+01 2.500e+00]
+ [3.721e+03 3.610e+02 6.100e+01 1.450e+01 9.500e+00]
+ [3.610e+02 1.521e+03 3.000e+00 7.500e+00 2.700e+01]
+ [2.250e+02 2.500e+01 1.000e+00 6.500e+00 3.050e+01]
+ [1.960e+02 1.600e+01 1.300e+01 2.500e+00 3.050e+01]
+ [3.025e+03 3.721e+03 5.000e+00 3.050e+01 3.050e+01]
+ [3.721e+03 6.400e+01 5.500e+01 1.950e+01 1.350e+01]
+ [3.721e+03 2.500e+01 6.100e+01 7.500e+00 7.000e+00]
+ [3.721e+03 3.721e+03 4.100e+01 3.050e+01 2.000e+00]
+ [2.116e+03 4.000e+00 1.400e+01 6.500e+00 3.050e+01]
+ [6.400e+01 6.250e+02 5.000e+00 1.250e+01 1.950e+01]
+ [2.500e+01 3.721e+03 5.400e+01 3.050e+01 4.000e+00]
+ [3.721e+03 1.521e+03 6.100e+01 5.000e-01 2.500e+00]
+ [1.000e+02 6.400e+01 3.900e+01 9.000e+00 3.050e+01]
+ [1.000e+00 2.500e+01 2.300e+01 6.500e+00 6.500e+00]
+ [5.290e+02 3.721e+03 1.500e+01 9.500e+00 7.500e+00]
+ [3.610e+02 2.116e+03 5.500e+01 2.700e+01 6.500e+00]
+ [3.721e+03 4.410e+02 6.100e+01 3.050e+01 2.500e+00]
+ [1.521e+03 1.690e+02 4.100e+01 6.500e+00 3.050e+01]
+ [6.400e+01 1.521e+03 1.400e+01 1.250e+01 9.000e+00]
+ [1.000e+00 4.410e+02 5.000e+00 3.050e+01 5.000e-01]
+ [1.521e+03 1.690e+02 5.400e+01 1.000e+00 1.950e+01]
+ [3.721e+03 3.721e+03 6.100e+01 2.500e+00 4.000e+00]
+ [4.000e+00 1.521e+03 3.900e+01 5.000e-01 9.500e+00]
+ [8.100e+01 3.240e+02 2.300e+01 6.500e+00 3.050e+01]
+ [1.521e+03 2.500e+01 1.500e+01 4.500e+00 7.500e+00]
+ [2.500e+01 2.500e+01 5.500e+01 9.500e+00 1.050e+01]
+ [2.916e+03 3.721e+03 6.100e+01 4.000e+00 1.950e+01]
+ [3.721e+03 3.721e+03 2.700e+01 3.050e+01 3.500e+00]
+ [1.521e+03 3.721e+03 1.400e+01 1.000e+00 9.000e+00]
+ [6.400e+01 7.290e+02 4.000e+00 7.500e+00 5.000e-01]
+ [2.500e+01 1.960e+02 6.100e+01 1.250e+01 1.000e+00]
+ [3.721e+03 1.600e+01 3.900e+01 2.750e+01 2.500e+00]
+ [9.000e+00 3.721e+03 8.000e+00 3.050e+01 2.650e+01]]</code></pre>
+</div>
+</div>
+<div id="cell-21" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="86cd5736-1d21-419e-83e4-6d2a954e6cd2" data-execution_count="29">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>matrix[:, <span class="dv">3</span>:<span class="dv">5</span>] <span class="op">=</span> matrix[:,<span class="dv">3</span>:<span class="dv">5</span>] <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(matrix)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[5.700e+01 1.440e+02 3.610e+02 1.800e+01 4.100e+01]
+ [4.600e+01 1.000e+00 1.521e+03 1.500e+01 6.100e+01]
+ [2.300e+01 5.290e+02 2.250e+02 2.100e+01 6.000e+00]
+ [1.000e+00 3.610e+02 2.250e+02 7.000e+00 1.800e+01]
+ [1.900e+01 3.721e+03 1.600e+01 8.000e+00 1.000e+00]
+ [6.100e+01 1.521e+03 3.721e+03 6.100e+01 2.000e+00]
+ [2.000e+00 6.400e+01 1.000e+00 1.000e+00 1.000e+01]
+ [1.800e+01 1.000e+00 5.290e+02 1.400e+01 1.500e+01]
+ [9.000e+00 1.521e+03 6.400e+01 4.000e+00 2.100e+01]
+ [1.200e+01 3.721e+03 8.100e+01 6.100e+01 1.900e+01]
+ [1.200e+01 9.000e+00 1.440e+02 3.900e+01 6.100e+01]
+ [9.000e+00 1.000e+00 2.500e+01 8.000e+00 4.000e+00]
+ [7.000e+00 1.521e+03 3.721e+03 1.800e+01 1.000e+00]
+ [5.400e+01 9.000e+00 8.100e+01 1.500e+01 2.500e+01]
+ [6.100e+01 6.400e+01 1.960e+02 2.100e+01 5.500e+01]
+ [1.000e+00 3.025e+03 3.721e+03 7.000e+00 6.100e+01]
+ [1.400e+01 3.721e+03 1.521e+03 8.000e+00 2.900e+01]
+ [4.000e+00 7.840e+02 6.400e+01 6.100e+01 1.000e+00]
+ [6.100e+01 2.500e+01 2.250e+02 6.100e+01 1.200e+01]
+ [3.900e+01 5.290e+02 4.410e+02 6.100e+01 1.200e+01]
+ [8.000e+00 1.000e+00 4.900e+01 4.600e+01 1.500e+01]
+ [5.000e+00 3.240e+02 6.400e+01 8.000e+00 1.500e+01]
+ [6.100e+01 2.500e+01 1.521e+03 5.000e+00 8.000e+00]
+ [1.900e+01 3.721e+03 2.809e+03 6.100e+01 5.500e+01]
+ [1.200e+01 1.521e+03 3.721e+03 2.200e+01 6.100e+01]
+ [9.000e+00 6.400e+01 7.290e+02 1.500e+01 2.900e+01]
+ [3.900e+01 2.500e+01 1.960e+02 1.800e+01 1.000e+00]
+ [8.000e+00 3.721e+03 1.600e+01 1.600e+01 1.200e+01]
+ [2.500e+01 1.296e+03 2.916e+03 1.000e+00 1.200e+01]
+ [6.100e+01 4.410e+02 3.721e+03 1.200e+01 1.000e+00]
+ [3.900e+01 4.000e+00 1.000e+00 6.100e+01 2.500e+01]
+ [1.500e+01 1.000e+02 3.610e+02 2.000e+00 5.500e+01]
+ [2.200e+01 4.410e+02 3.721e+03 1.200e+01 5.800e+01]
+ [5.000e+00 4.000e+00 8.100e+01 1.000e+00 6.100e+01]
+ [1.900e+01 3.721e+03 1.960e+02 4.000e+00 6.100e+01]
+ [6.100e+01 4.000e+00 3.721e+03 5.000e+00 6.100e+01]
+ [6.100e+01 8.100e+01 4.410e+02 6.100e+01 3.400e+01]
+ [3.721e+03 3.240e+02 3.600e+01 2.300e+01 5.000e+00]
+ [9.000e+02 1.600e+01 3.600e+01 5.000e+00 6.100e+01]
+ [8.100e+01 2.916e+03 8.100e+01 1.400e+01 3.000e+00]
+ [1.600e+01 3.721e+03 3.610e+02 3.900e+01 8.000e+00]
+ [3.721e+03 1.000e+00 6.400e+01 6.100e+01 1.500e+01]
+ [4.900e+01 1.960e+02 3.721e+03 1.900e+01 1.800e+01]
+ [6.250e+02 1.600e+01 1.521e+03 1.400e+01 3.900e+01]
+ [3.240e+02 3.721e+03 6.400e+01 9.000e+00 1.200e+01]
+ [2.500e+01 3.610e+02 2.250e+02 3.000e+00 5.000e+00]
+ [3.721e+03 6.400e+01 4.410e+02 1.100e+01 4.000e+00]
+ [1.000e+00 4.410e+02 4.900e+01 5.000e+00 6.100e+01]
+ [1.960e+02 1.960e+02 6.400e+01 1.800e+01 9.000e+00]
+ [1.600e+01 3.721e+03 1.521e+03 6.200e+01 1.400e+01]
+ [3.721e+03 3.721e+03 3.721e+03 1.900e+01 6.100e+01]
+ [4.900e+01 3.721e+03 6.400e+01 1.400e+01 8.000e+00]
+ [8.100e+01 2.116e+03 2.500e+01 1.000e+00 9.000e+00]
+ [1.690e+02 6.400e+01 3.721e+03 3.000e+00 1.900e+01]
+ [4.000e+00 2.500e+01 3.610e+02 1.100e+01 6.100e+01]
+ [1.440e+02 3.721e+03 1.521e+03 5.500e+01 1.000e+01]
+ [2.500e+01 3.600e+01 2.250e+02 6.100e+01 1.500e+01]
+ [3.721e+03 3.240e+02 2.250e+02 3.400e+01 2.500e+01]
+ [8.100e+01 4.410e+02 1.600e+01 5.000e+00 5.300e+01]
+ [1.960e+02 1.690e+02 2.916e+03 6.100e+01 6.100e+01]
+ [3.721e+03 8.100e+01 3.721e+03 1.200e+01 5.700e+01]
+ [1.521e+03 2.250e+02 3.721e+03 5.000e+00 4.600e+01]
+ [6.400e+01 4.410e+02 3.721e+03 6.000e+00 2.300e+01]
+ [2.500e+01 3.610e+02 2.116e+03 3.900e+01 1.000e+00]
+ [3.721e+03 3.721e+03 6.400e+01 6.100e+01 1.900e+01]
+ [5.290e+02 7.840e+02 2.500e+01 9.000e+00 6.100e+01]
+ [1.000e+00 1.000e+00 3.721e+03 3.900e+01 2.000e+00]
+ [4.000e+00 1.960e+02 1.296e+03 6.100e+01 1.800e+01]
+ [2.500e+01 1.600e+01 1.000e+00 4.000e+00 9.000e+00]
+ [4.096e+03 2.500e+01 4.000e+00 5.000e+00 1.200e+01]
+ [3.721e+03 3.240e+02 4.000e+00 1.000e+00 1.200e+01]
+ [7.290e+02 3.610e+02 2.500e+01 4.000e+00 9.000e+00]
+ [1.440e+02 1.960e+02 3.240e+02 5.400e+01 7.000e+00]
+ [1.440e+02 1.000e+00 5.290e+02 6.100e+01 5.400e+01]
+ [3.721e+03 1.521e+03 2.250e+02 1.000e+00 6.100e+01]
+ [1.690e+02 9.000e+00 9.000e+00 1.400e+01 1.000e+00]
+ [8.100e+01 6.400e+01 1.210e+02 4.000e+00 1.400e+01]
+ [1.690e+02 3.025e+03 2.916e+03 6.100e+01 4.000e+00]
+ [3.610e+02 3.364e+03 3.721e+03 2.300e+01 6.100e+01]
+ [6.250e+02 3.721e+03 5.290e+02 9.000e+00 3.900e+01]
+ [3.721e+03 1.156e+03 8.100e+01 3.900e+01 8.000e+00]
+ [5.290e+02 2.500e+01 1.521e+03 8.000e+00 5.000e+00]
+ [2.500e+01 3.721e+03 6.400e+01 6.100e+01 6.100e+01]
+ [3.240e+02 1.521e+03 6.100e+01 9.000e+00 1.900e+01]
+ [2.500e+01 2.250e+02 5.000e+00 3.900e+01 1.200e+01]
+ [3.721e+03 2.250e+02 2.500e+01 1.900e+01 9.000e+00]
+ [1.521e+03 1.210e+02 5.000e+00 6.100e+01 3.900e+01]
+ [6.400e+01 3.721e+03 1.900e+01 8.000e+00 8.000e+00]
+ [2.500e+01 6.400e+01 6.100e+01 5.000e+00 2.500e+01]
+ [3.721e+03 8.100e+01 1.500e+01 1.000e+00 6.100e+01]
+ [4.000e+00 3.610e+02 6.000e+00 4.000e+00 3.900e+01]
+ [2.250e+02 3.721e+03 6.100e+01 6.100e+01 1.500e+01]
+ [3.240e+02 4.840e+02 6.000e+00 6.100e+01 2.200e+01]
+ [2.250e+02 2.250e+02 1.200e+01 6.100e+01 5.000e+00]
+ [4.900e+01 3.240e+02 1.000e+00 3.400e+01 1.900e+01]
+ [2.250e+02 2.560e+02 1.300e+01 5.000e+00 6.100e+01]
+ [4.840e+02 1.000e+00 5.000e+00 6.100e+01 6.100e+01]
+ [2.500e+01 1.440e+02 5.400e+01 2.300e+01 6.100e+01]
+ [3.610e+02 3.721e+03 6.100e+01 5.000e+00 3.000e+01]
+ [2.916e+03 3.610e+02 2.900e+01 1.400e+01 9.000e+00]
+ [3.721e+03 5.290e+02 1.000e+00 3.900e+01 4.000e+00]
+ [3.721e+03 2.250e+02 1.300e+01 6.100e+01 6.100e+01]
+ [3.721e+03 3.240e+02 5.000e+00 7.000e+00 7.000e+00]
+ [7.290e+02 1.600e+01 6.100e+01 1.000e+00 2.500e+01]
+ [1.960e+02 3.721e+03 2.300e+01 1.200e+01 1.800e+01]
+ [1.600e+01 8.100e+01 8.000e+00 2.100e+01 5.000e+00]
+ [3.721e+03 1.960e+02 9.000e+00 1.300e+01 6.100e+01]
+ [1.521e+03 3.721e+03 6.000e+00 1.600e+01 1.000e+00]
+ [6.400e+01 6.400e+01 6.000e+00 8.000e+00 1.400e+01]
+ [2.500e+01 1.000e+00 1.200e+01 9.000e+00 4.000e+00]
+ [3.721e+03 1.960e+02 9.000e+00 1.400e+01 6.100e+01]
+ [1.690e+02 1.600e+01 1.400e+01 7.000e+00 7.000e+00]
+ [2.250e+02 3.969e+03 7.000e+00 6.100e+01 9.000e+00]
+ [1.690e+02 3.721e+03 6.100e+01 2.000e+00 1.300e+01]
+ [2.500e+01 3.721e+03 3.900e+01 1.000e+00 2.000e+00]
+ [3.721e+03 3.721e+03 8.000e+00 3.000e+00 1.200e+01]
+ [3.240e+02 1.444e+03 1.800e+01 1.100e+01 5.000e+00]
+ [1.000e+00 2.250e+02 1.500e+01 5.300e+01 6.100e+01]
+ [1.521e+03 1.960e+02 2.100e+01 6.100e+01 9.000e+00]
+ [6.400e+01 4.900e+01 7.000e+00 5.800e+01 1.400e+01]
+ [3.610e+02 3.721e+03 8.000e+00 2.700e+01 6.100e+01]
+ [3.721e+03 1.521e+03 6.100e+01 1.400e+01 3.900e+01]
+ [2.250e+02 8.100e+01 3.900e+01 4.000e+00 8.000e+00]
+ [4.410e+02 1.690e+02 8.000e+00 6.100e+01 5.000e+00]
+ [1.521e+03 2.500e+01 5.000e+00 8.000e+00 6.100e+01]
+ [4.900e+01 3.721e+03 6.100e+01 1.000e+00 2.300e+01]
+ [3.240e+02 1.521e+03 3.900e+01 1.900e+01 1.000e+00]
+ [1.000e+00 6.400e+01 2.100e+01 3.900e+01 2.000e+00]
+ [4.000e+00 2.500e+01 1.200e+01 6.100e+01 5.000e+00]
+ [2.500e+01 3.721e+03 7.000e+00 3.900e+01 6.400e+01]
+ [2.809e+03 1.690e+02 5.000e+00 8.000e+00 6.100e+01]
+ [3.721e+03 1.000e+00 2.500e+01 1.500e+01 2.700e+01]
+ [3.364e+03 1.960e+02 6.100e+01 2.100e+01 1.200e+01]
+ [7.840e+02 5.760e+02 2.300e+01 6.100e+01 1.200e+01]
+ [2.500e+01 2.250e+02 1.500e+01 1.900e+01 6.100e+01]
+ [5.290e+02 1.690e+02 1.500e+01 1.200e+01 1.300e+01]
+ [1.000e+00 2.500e+01 4.000e+00 1.000e+00 9.000e+00]
+ [3.240e+02 3.721e+03 5.400e+01 9.000e+00 1.300e+01]
+ [2.500e+01 3.600e+01 6.100e+01 1.400e+01 1.900e+01]
+ [3.721e+03 2.250e+02 6.100e+01 6.100e+01 2.500e+01]
+ [1.521e+03 2.500e+01 6.100e+01 3.900e+01 6.100e+01]
+ [6.400e+01 3.721e+03 2.700e+01 8.000e+00 2.300e+01]
+ [2.500e+01 6.400e+01 1.400e+01 5.000e+00 5.000e+00]
+ [3.721e+03 2.500e+01 4.000e+00 6.100e+01 1.800e+01]
+ [1.296e+03 3.721e+03 6.100e+01 3.600e+01 5.000e+00]
+ [1.000e+00 3.610e+02 2.000e+00 1.000e+00 6.100e+01]
+ [4.000e+00 2.250e+02 2.100e+01 2.000e+00 3.900e+01]
+ [4.000e+00 4.410e+02 1.800e+01 2.000e+00 8.000e+00]
+ [2.500e+01 4.900e+01 2.000e+00 5.000e+00 5.000e+00]
+ [3.240e+02 6.400e+01 1.200e+01 1.800e+01 6.100e+01]
+ [5.290e+02 1.521e+03 5.000e+00 2.300e+01 2.000e+00]
+ [2.250e+02 3.844e+03 4.000e+00 1.500e+01 1.500e+01]
+ [9.000e+00 3.721e+03 6.100e+01 3.000e+00 1.800e+01]
+ [1.210e+02 2.025e+03 1.000e+00 1.100e+01 1.500e+01]
+ [2.916e+03 2.250e+02 1.900e+01 5.600e+01 7.000e+00]
+ [3.721e+03 3.721e+03 6.100e+01 6.100e+01 1.500e+01]
+ [1.690e+02 3.240e+02 9.000e+00 6.100e+01 2.200e+01]
+ [6.250e+02 2.500e+01 3.900e+01 6.100e+01 5.000e+00]
+ [3.721e+03 3.610e+02 6.100e+01 2.900e+01 1.900e+01]
+ [3.610e+02 1.521e+03 3.000e+00 1.500e+01 5.400e+01]
+ [2.250e+02 2.500e+01 1.000e+00 1.300e+01 6.100e+01]
+ [1.960e+02 1.600e+01 1.300e+01 5.000e+00 6.100e+01]
+ [3.025e+03 3.721e+03 5.000e+00 6.100e+01 6.100e+01]
+ [3.721e+03 6.400e+01 5.500e+01 3.900e+01 2.700e+01]
+ [3.721e+03 2.500e+01 6.100e+01 1.500e+01 1.400e+01]
+ [3.721e+03 3.721e+03 4.100e+01 6.100e+01 4.000e+00]
+ [2.116e+03 4.000e+00 1.400e+01 1.300e+01 6.100e+01]
+ [6.400e+01 6.250e+02 5.000e+00 2.500e+01 3.900e+01]
+ [2.500e+01 3.721e+03 5.400e+01 6.100e+01 8.000e+00]
+ [3.721e+03 1.521e+03 6.100e+01 1.000e+00 5.000e+00]
+ [1.000e+02 6.400e+01 3.900e+01 1.800e+01 6.100e+01]
+ [1.000e+00 2.500e+01 2.300e+01 1.300e+01 1.300e+01]
+ [5.290e+02 3.721e+03 1.500e+01 1.900e+01 1.500e+01]
+ [3.610e+02 2.116e+03 5.500e+01 5.400e+01 1.300e+01]
+ [3.721e+03 4.410e+02 6.100e+01 6.100e+01 5.000e+00]
+ [1.521e+03 1.690e+02 4.100e+01 1.300e+01 6.100e+01]
+ [6.400e+01 1.521e+03 1.400e+01 2.500e+01 1.800e+01]
+ [1.000e+00 4.410e+02 5.000e+00 6.100e+01 1.000e+00]
+ [1.521e+03 1.690e+02 5.400e+01 2.000e+00 3.900e+01]
+ [3.721e+03 3.721e+03 6.100e+01 5.000e+00 8.000e+00]
+ [4.000e+00 1.521e+03 3.900e+01 1.000e+00 1.900e+01]
+ [8.100e+01 3.240e+02 2.300e+01 1.300e+01 6.100e+01]
+ [1.521e+03 2.500e+01 1.500e+01 9.000e+00 1.500e+01]
+ [2.500e+01 2.500e+01 5.500e+01 1.900e+01 2.100e+01]
+ [2.916e+03 3.721e+03 6.100e+01 8.000e+00 3.900e+01]
+ [3.721e+03 3.721e+03 2.700e+01 6.100e+01 7.000e+00]
+ [1.521e+03 3.721e+03 1.400e+01 2.000e+00 1.800e+01]
+ [6.400e+01 7.290e+02 4.000e+00 1.500e+01 1.000e+00]
+ [2.500e+01 1.960e+02 6.100e+01 2.500e+01 2.000e+00]
+ [3.721e+03 1.600e+01 3.900e+01 5.500e+01 5.000e+00]
+ [9.000e+00 3.721e+03 8.000e+00 6.100e+01 5.300e+01]]</code></pre>
+</div>
+</div>
+<div id="cell-22" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="5723c9df-bd6b-46c7-b2c9-b54414eab56d" data-execution_count="30">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>one_d <span class="op">=</span> matrix.reshape(<span class="op">-</span><span class="dv">1</span>, order<span class="op">=</span><span class="st">"F"</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(one_d)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[5.700e+01 4.600e+01 2.300e+01 1.000e+00 1.900e+01 6.100e+01 2.000e+00
+ 1.800e+01 9.000e+00 1.200e+01 1.200e+01 9.000e+00 7.000e+00 5.400e+01
+ 6.100e+01 1.000e+00 1.400e+01 4.000e+00 6.100e+01 3.900e+01 8.000e+00
+ 5.000e+00 6.100e+01 1.900e+01 1.200e+01 9.000e+00 3.900e+01 8.000e+00
+ 2.500e+01 6.100e+01 3.900e+01 1.500e+01 2.200e+01 5.000e+00 1.900e+01
+ 6.100e+01 6.100e+01 3.721e+03 9.000e+02 8.100e+01 1.600e+01 3.721e+03
+ 4.900e+01 6.250e+02 3.240e+02 2.500e+01 3.721e+03 1.000e+00 1.960e+02
+ 1.600e+01 3.721e+03 4.900e+01 8.100e+01 1.690e+02 4.000e+00 1.440e+02
+ 2.500e+01 3.721e+03 8.100e+01 1.960e+02 3.721e+03 1.521e+03 6.400e+01
+ 2.500e+01 3.721e+03 5.290e+02 1.000e+00 4.000e+00 2.500e+01 4.096e+03
+ 3.721e+03 7.290e+02 1.440e+02 1.440e+02 3.721e+03 1.690e+02 8.100e+01
+ 1.690e+02 3.610e+02 6.250e+02 3.721e+03 5.290e+02 2.500e+01 3.240e+02
+ 2.500e+01 3.721e+03 1.521e+03 6.400e+01 2.500e+01 3.721e+03 4.000e+00
+ 2.250e+02 3.240e+02 2.250e+02 4.900e+01 2.250e+02 4.840e+02 2.500e+01
+ 3.610e+02 2.916e+03 3.721e+03 3.721e+03 3.721e+03 7.290e+02 1.960e+02
+ 1.600e+01 3.721e+03 1.521e+03 6.400e+01 2.500e+01 3.721e+03 1.690e+02
+ 2.250e+02 1.690e+02 2.500e+01 3.721e+03 3.240e+02 1.000e+00 1.521e+03
+ 6.400e+01 3.610e+02 3.721e+03 2.250e+02 4.410e+02 1.521e+03 4.900e+01
+ 3.240e+02 1.000e+00 4.000e+00 2.500e+01 2.809e+03 3.721e+03 3.364e+03
+ 7.840e+02 2.500e+01 5.290e+02 1.000e+00 3.240e+02 2.500e+01 3.721e+03
+ 1.521e+03 6.400e+01 2.500e+01 3.721e+03 1.296e+03 1.000e+00 4.000e+00
+ 4.000e+00 2.500e+01 3.240e+02 5.290e+02 2.250e+02 9.000e+00 1.210e+02
+ 2.916e+03 3.721e+03 1.690e+02 6.250e+02 3.721e+03 3.610e+02 2.250e+02
+ 1.960e+02 3.025e+03 3.721e+03 3.721e+03 3.721e+03 2.116e+03 6.400e+01
+ 2.500e+01 3.721e+03 1.000e+02 1.000e+00 5.290e+02 3.610e+02 3.721e+03
+ 1.521e+03 6.400e+01 1.000e+00 1.521e+03 3.721e+03 4.000e+00 8.100e+01
+ 1.521e+03 2.500e+01 2.916e+03 3.721e+03 1.521e+03 6.400e+01 2.500e+01
+ 3.721e+03 9.000e+00 1.440e+02 1.000e+00 5.290e+02 3.610e+02 3.721e+03
+ 1.521e+03 6.400e+01 1.000e+00 1.521e+03 3.721e+03 9.000e+00 1.000e+00
+ 1.521e+03 9.000e+00 6.400e+01 3.025e+03 3.721e+03 7.840e+02 2.500e+01
+ 5.290e+02 1.000e+00 3.240e+02 2.500e+01 3.721e+03 1.521e+03 6.400e+01
+ 2.500e+01 3.721e+03 1.296e+03 4.410e+02 4.000e+00 1.000e+02 4.410e+02
+ 4.000e+00 3.721e+03 4.000e+00 8.100e+01 3.240e+02 1.600e+01 2.916e+03
+ 3.721e+03 1.000e+00 1.960e+02 1.600e+01 3.721e+03 3.610e+02 6.400e+01
+ 4.410e+02 1.960e+02 3.721e+03 3.721e+03 3.721e+03 2.116e+03 6.400e+01
+ 2.500e+01 3.721e+03 3.600e+01 3.240e+02 4.410e+02 1.690e+02 8.100e+01
+ 2.250e+02 4.410e+02 3.610e+02 3.721e+03 7.840e+02 1.000e+00 1.960e+02
+ 1.600e+01 2.500e+01 3.240e+02 3.610e+02 1.960e+02 1.000e+00 1.521e+03
+ 9.000e+00 6.400e+01 3.025e+03 3.364e+03 3.721e+03 1.156e+03 2.500e+01
+ 3.721e+03 1.521e+03 2.250e+02 2.250e+02 1.210e+02 3.721e+03 6.400e+01
+ 8.100e+01 3.610e+02 3.721e+03 4.840e+02 2.250e+02 3.240e+02 2.560e+02
+ 1.000e+00 1.440e+02 3.721e+03 3.610e+02 5.290e+02 2.250e+02 3.240e+02
+ 1.600e+01 3.721e+03 8.100e+01 1.960e+02 3.721e+03 6.400e+01 1.000e+00
+ 1.960e+02 1.600e+01 3.969e+03 3.721e+03 3.721e+03 3.721e+03 1.444e+03
+ 2.250e+02 1.960e+02 4.900e+01 3.721e+03 1.521e+03 8.100e+01 1.690e+02
+ 2.500e+01 3.721e+03 1.521e+03 6.400e+01 2.500e+01 3.721e+03 1.690e+02
+ 1.000e+00 1.960e+02 5.760e+02 2.250e+02 1.690e+02 2.500e+01 3.721e+03
+ 3.600e+01 2.250e+02 2.500e+01 3.721e+03 6.400e+01 2.500e+01 3.721e+03
+ 3.610e+02 2.250e+02 4.410e+02 4.900e+01 6.400e+01 1.521e+03 3.844e+03
+ 3.721e+03 2.025e+03 2.250e+02 3.721e+03 3.240e+02 2.500e+01 3.610e+02
+ 1.521e+03 2.500e+01 1.600e+01 3.721e+03 6.400e+01 2.500e+01 3.721e+03
+ 4.000e+00 6.250e+02 3.721e+03 1.521e+03 6.400e+01 2.500e+01 3.721e+03
+ 2.116e+03 4.410e+02 1.690e+02 1.521e+03 4.410e+02 1.690e+02 3.721e+03
+ 1.521e+03 3.240e+02 2.500e+01 2.500e+01 3.721e+03 3.721e+03 3.721e+03
+ 7.290e+02 1.960e+02 1.600e+01 3.721e+03 3.610e+02 1.521e+03 2.250e+02
+ 2.250e+02 1.600e+01 3.721e+03 1.000e+00 5.290e+02 6.400e+01 8.100e+01
+ 1.440e+02 2.500e+01 3.721e+03 8.100e+01 1.960e+02 3.721e+03 1.521e+03
+ 6.400e+01 2.250e+02 4.410e+02 4.900e+01 6.400e+01 1.521e+03 2.809e+03
+ 3.721e+03 7.290e+02 1.960e+02 1.600e+01 2.916e+03 3.721e+03 1.000e+00
+ 3.610e+02 3.721e+03 8.100e+01 1.960e+02 3.721e+03 4.410e+02 3.600e+01
+ 3.600e+01 8.100e+01 3.610e+02 6.400e+01 3.721e+03 1.521e+03 6.400e+01
+ 2.250e+02 4.410e+02 4.900e+01 6.400e+01 1.521e+03 3.721e+03 6.400e+01
+ 2.500e+01 3.721e+03 3.610e+02 1.521e+03 2.250e+02 2.250e+02 1.600e+01
+ 2.916e+03 3.721e+03 3.721e+03 3.721e+03 2.116e+03 6.400e+01 2.500e+01
+ 3.721e+03 1.296e+03 1.000e+00 4.000e+00 4.000e+00 2.500e+01 3.240e+02
+ 5.290e+02 2.250e+02 9.000e+00 1.210e+02 2.916e+03 3.721e+03 5.290e+02
+ 8.100e+01 1.521e+03 6.400e+01 6.100e+01 5.000e+00 2.500e+01 5.000e+00
+ 1.900e+01 6.100e+01 1.500e+01 6.000e+00 6.100e+01 6.000e+00 1.200e+01
+ 1.000e+00 1.300e+01 5.000e+00 5.400e+01 6.100e+01 2.900e+01 1.000e+00
+ 1.300e+01 5.000e+00 6.100e+01 2.300e+01 8.000e+00 9.000e+00 6.000e+00
+ 6.000e+00 1.200e+01 9.000e+00 1.400e+01 7.000e+00 6.100e+01 3.900e+01
+ 8.000e+00 1.800e+01 1.500e+01 2.100e+01 7.000e+00 8.000e+00 6.100e+01
+ 3.900e+01 8.000e+00 5.000e+00 6.100e+01 3.900e+01 2.100e+01 1.200e+01
+ 7.000e+00 5.000e+00 2.500e+01 6.100e+01 2.300e+01 1.500e+01 1.500e+01
+ 4.000e+00 5.400e+01 6.100e+01 6.100e+01 6.100e+01 2.700e+01 1.400e+01
+ 4.000e+00 6.100e+01 2.000e+00 2.100e+01 1.800e+01 2.000e+00 1.200e+01
+ 5.000e+00 4.000e+00 6.100e+01 1.000e+00 1.900e+01 6.100e+01 9.000e+00
+ 3.900e+01 6.100e+01 3.000e+00 1.000e+00 1.300e+01 5.000e+00 5.500e+01
+ 6.100e+01 4.100e+01 1.400e+01 5.000e+00 5.400e+01 6.100e+01 3.900e+01
+ 2.300e+01 1.500e+01 5.500e+01 6.100e+01 4.100e+01 1.400e+01 5.000e+00
+ 5.400e+01 6.100e+01 3.900e+01 2.300e+01 1.500e+01 5.500e+01 6.100e+01
+ 2.700e+01 1.400e+01 4.000e+00 6.100e+01 3.900e+01 8.000e+00 1.800e+01
+ 1.500e+01 2.100e+01 7.000e+00 8.000e+00 6.100e+01 1.000e+00 1.400e+01
+ 4.000e+00 6.100e+01 3.900e+01 8.000e+00 1.800e+01 1.500e+01 2.100e+01
+ 7.000e+00 8.000e+00 6.100e+01 6.100e+01 6.100e+01 4.600e+01 8.000e+00
+ 5.000e+00 6.100e+01 2.200e+01 1.500e+01 1.800e+01 1.600e+01 1.000e+00
+ 1.200e+01 6.100e+01 2.000e+00 1.200e+01 1.000e+00 4.000e+00 5.000e+00
+ 6.100e+01 2.300e+01 5.000e+00 1.400e+01 3.900e+01 6.100e+01 1.900e+01
+ 1.400e+01 9.000e+00 3.000e+00 1.100e+01 5.000e+00 1.800e+01 6.200e+01
+ 1.900e+01 1.400e+01 1.000e+00 3.000e+00 1.100e+01 5.500e+01 6.100e+01
+ 3.400e+01 5.000e+00 6.100e+01 1.200e+01 5.000e+00 6.000e+00 3.900e+01
+ 6.100e+01 9.000e+00 3.900e+01 6.100e+01 4.000e+00 5.000e+00 1.000e+00
+ 4.000e+00 5.400e+01 6.100e+01 1.000e+00 1.400e+01 4.000e+00 6.100e+01
+ 2.300e+01 9.000e+00 3.900e+01 8.000e+00 6.100e+01 9.000e+00 3.900e+01
+ 1.900e+01 6.100e+01 8.000e+00 5.000e+00 1.000e+00 4.000e+00 6.100e+01
+ 6.100e+01 6.100e+01 3.400e+01 5.000e+00 6.100e+01 2.300e+01 5.000e+00
+ 1.400e+01 3.900e+01 6.100e+01 7.000e+00 1.000e+00 1.200e+01 2.100e+01
+ 1.300e+01 1.600e+01 8.000e+00 9.000e+00 1.400e+01 7.000e+00 6.100e+01
+ 2.000e+00 1.000e+00 3.000e+00 1.100e+01 5.300e+01 6.100e+01 5.800e+01
+ 2.700e+01 1.400e+01 4.000e+00 6.100e+01 8.000e+00 1.000e+00 1.900e+01
+ 3.900e+01 6.100e+01 3.900e+01 8.000e+00 1.500e+01 2.100e+01 6.100e+01
+ 1.900e+01 1.200e+01 1.000e+00 9.000e+00 1.400e+01 6.100e+01 3.900e+01
+ 8.000e+00 5.000e+00 6.100e+01 3.600e+01 1.000e+00 2.000e+00 2.000e+00
+ 5.000e+00 1.800e+01 2.300e+01 1.500e+01 3.000e+00 1.100e+01 5.600e+01
+ 6.100e+01 6.100e+01 6.100e+01 2.900e+01 1.500e+01 1.300e+01 5.000e+00
+ 6.100e+01 3.900e+01 1.500e+01 6.100e+01 1.300e+01 2.500e+01 6.100e+01
+ 1.000e+00 1.800e+01 1.300e+01 1.900e+01 5.400e+01 6.100e+01 1.300e+01
+ 2.500e+01 6.100e+01 2.000e+00 5.000e+00 1.000e+00 1.300e+01 9.000e+00
+ 1.900e+01 8.000e+00 6.100e+01 2.000e+00 1.500e+01 2.500e+01 5.500e+01
+ 6.100e+01 4.100e+01 6.100e+01 6.000e+00 1.800e+01 1.000e+00 2.000e+00
+ 1.000e+01 1.500e+01 2.100e+01 1.900e+01 6.100e+01 4.000e+00 1.000e+00
+ 2.500e+01 5.500e+01 6.100e+01 2.900e+01 1.000e+00 1.200e+01 1.200e+01
+ 1.500e+01 1.500e+01 8.000e+00 5.500e+01 6.100e+01 2.900e+01 1.000e+00
+ 1.200e+01 1.200e+01 1.000e+00 2.500e+01 5.500e+01 5.800e+01 6.100e+01
+ 6.100e+01 6.100e+01 3.400e+01 5.000e+00 6.100e+01 3.000e+00 8.000e+00
+ 1.500e+01 1.800e+01 3.900e+01 1.200e+01 5.000e+00 4.000e+00 6.100e+01
+ 9.000e+00 1.400e+01 6.100e+01 8.000e+00 9.000e+00 1.900e+01 6.100e+01
+ 1.000e+01 1.500e+01 2.500e+01 5.300e+01 6.100e+01 5.700e+01 4.600e+01
+ 2.300e+01 1.000e+00 1.900e+01 6.100e+01 2.000e+00 1.800e+01 9.000e+00
+ 1.200e+01 1.200e+01 9.000e+00 7.000e+00 5.400e+01 6.100e+01 1.000e+00
+ 1.400e+01 4.000e+00 6.100e+01 3.900e+01 8.000e+00 5.000e+00 6.100e+01
+ 1.900e+01 1.200e+01 9.000e+00 3.900e+01 8.000e+00 2.500e+01 6.100e+01
+ 3.900e+01 1.500e+01 2.200e+01 5.000e+00 1.900e+01 6.100e+01 6.100e+01
+ 6.100e+01 3.000e+01 9.000e+00 4.000e+00 6.100e+01 7.000e+00 2.500e+01
+ 1.800e+01 5.000e+00 6.100e+01 1.000e+00 1.400e+01 4.000e+00 6.100e+01
+ 7.000e+00 9.000e+00 1.300e+01 2.000e+00 1.200e+01 5.000e+00 6.100e+01
+ 9.000e+00 1.400e+01 6.100e+01 3.900e+01 8.000e+00 5.000e+00 6.100e+01
+ 2.300e+01 1.000e+00 2.000e+00 5.000e+00 6.400e+01 6.100e+01 2.700e+01
+ 1.200e+01 1.200e+01 6.100e+01 1.300e+01 9.000e+00 1.300e+01 1.900e+01
+ 2.500e+01 6.100e+01 2.300e+01 5.000e+00 1.800e+01 5.000e+00 6.100e+01
+ 3.900e+01 8.000e+00 5.000e+00 6.100e+01 2.000e+00 1.500e+01 1.800e+01
+ 1.500e+01 7.000e+00 1.500e+01 2.200e+01 5.000e+00 1.900e+01 5.400e+01
+ 6.100e+01 6.100e+01 6.100e+01 2.700e+01 1.400e+01 4.000e+00 6.100e+01
+ 3.900e+01 8.000e+00 5.000e+00 6.100e+01 1.300e+01 1.500e+01 1.300e+01
+ 5.000e+00 6.100e+01 1.800e+01 1.000e+00 3.900e+01 8.000e+00 1.900e+01
+ 6.100e+01 1.500e+01 2.100e+01 3.900e+01 7.000e+00 1.800e+01 1.000e+00
+ 2.000e+00 5.000e+00 5.300e+01]</code></pre>
+</div>
+</div>
+<div id="cell-23" class="cell" data-outputid="870dc24f-75e1-416a-c5a3-660be449631d" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-execution_count="31">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check if 500 and on are below 100</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co">#np.all asks the question are all of these conditions true?</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>after_500 <span class="op">=</span> one_d[<span class="dv">500</span>:]</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>all_below_100 <span class="op">=</span> np.<span class="bu">all</span>(after_500 <span class="op">&lt;</span> <span class="dv">100</span>)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(all_below_100)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div id="cell-24" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="05318c06-3114-457e-fb37-4030ab491902" data-execution_count="34">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">#sqrt</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>one_d[<span class="dv">36</span>:<span class="dv">465</span>] <span class="op">=</span> np.sqrt(one_d[<span class="dv">36</span>:<span class="dv">465</span>])</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(one_d)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[57.         46.         23.          1.         19.         61.
+  2.         18.          9.         12.         12.          9.
+  7.         54.         61.          1.         14.          4.
+ 61.         39.          8.          5.         61.         19.
+ 12.          9.         39.          8.         25.         61.
+ 39.         15.         22.          5.         19.         61.
+  2.79468239  7.81024968  5.47722558  3.          2.          7.81024968
+  2.64575131  5.          4.24264069  2.23606798  7.81024968  1.
+  3.74165739  2.          7.81024968  2.64575131  3.          3.60555128
+  1.41421356  3.46410162  2.23606798  7.81024968  3.          3.74165739
+  7.81024968  6.244998    2.82842712  2.23606798  7.81024968  4.79583152
+  1.          1.41421356  2.23606798  8.          7.81024968  5.19615242
+  3.46410162  3.46410162  7.81024968  3.60555128  3.          3.60555128
+  4.35889894  5.          7.81024968  4.79583152  2.23606798  4.24264069
+  2.23606798  7.81024968  6.244998    2.82842712  2.23606798  7.81024968
+  1.41421356  3.87298335  4.24264069  3.87298335  2.64575131  3.87298335
+  4.69041576  2.23606798  4.35889894  7.34846923  7.81024968  7.81024968
+  7.81024968  5.19615242  3.74165739  2.          7.81024968  6.244998
+  2.82842712  2.23606798  7.81024968  3.60555128  3.87298335  3.60555128
+  2.23606798  7.81024968  4.24264069  1.          6.244998    2.82842712
+  4.35889894  7.81024968  3.87298335  4.58257569  6.244998    2.64575131
+  4.24264069  1.          1.41421356  2.23606798  7.28010989  7.81024968
+  7.61577311  5.29150262  2.23606798  4.79583152  1.          4.24264069
+  2.23606798  7.81024968  6.244998    2.82842712  2.23606798  7.81024968
+  6.          1.          1.41421356  1.41421356  2.23606798  4.24264069
+  4.79583152  3.87298335  1.73205081  3.31662479  7.34846923  7.81024968
+  3.60555128  5.          7.81024968  4.35889894  3.87298335  3.74165739
+  7.41619849  7.81024968  7.81024968  7.81024968  6.78232998  2.82842712
+  2.23606798  7.81024968  3.16227766  1.          4.79583152  4.35889894
+  7.81024968  6.244998    2.82842712  1.          6.244998    7.81024968
+  1.41421356  3.          6.244998    2.23606798  7.34846923  7.81024968
+  6.244998    2.82842712  2.23606798  7.81024968  1.73205081 12.
+  1.         23.         19.         61.         39.          8.
+  1.         39.         61.          3.          1.         39.
+  3.          8.         55.         61.         28.          5.
+ 23.          1.         18.          5.         61.         39.
+  8.          5.         61.         36.         21.          2.
+ 10.         21.          2.         61.          2.          3.
+  4.24264069  2.          7.34846923  7.81024968  1.          3.74165739
+  2.          7.81024968  4.35889894  2.82842712  4.58257569  3.74165739
+  7.81024968  7.81024968  7.81024968  6.78232998  2.82842712  2.23606798
+  7.81024968  2.44948974  4.24264069  4.58257569  3.60555128  3.
+  3.87298335  4.58257569  4.35889894  7.81024968  5.29150262  1.
+  3.74165739  2.          2.23606798  4.24264069  4.35889894  3.74165739
+  1.          6.244998    1.73205081  2.82842712  7.41619849  7.61577311
+  7.81024968  5.83095189  2.23606798  7.81024968  6.244998    3.87298335
+  3.87298335  3.31662479  7.81024968  2.82842712  3.          4.35889894
+  7.81024968  4.69041576  3.87298335  4.24264069  4.          1.
+  3.46410162  7.81024968  4.35889894  4.79583152  3.87298335  4.24264069
+  2.          7.81024968  3.          3.74165739  7.81024968  2.82842712
+  1.          3.74165739  2.          7.93725393  7.81024968  7.81024968
+  7.81024968  6.164414    3.87298335  3.74165739  2.64575131  7.81024968
+  6.244998    3.          3.60555128  2.23606798  7.81024968  6.244998
+  2.82842712  2.23606798  7.81024968  3.60555128  1.          3.74165739
+  4.89897949  3.87298335  3.60555128  2.23606798  7.81024968  2.44948974
+  3.87298335  2.23606798  7.81024968  2.82842712  2.23606798  7.81024968
+  4.35889894  3.87298335  4.58257569  2.64575131  2.82842712  6.244998
+  7.87400787  7.81024968  6.70820393  3.87298335  7.81024968  4.24264069
+  2.23606798  4.35889894  6.244998    2.23606798  2.          7.81024968
+  2.82842712  2.23606798  7.81024968  1.41421356  5.          7.81024968
+  6.244998    2.82842712  2.23606798  7.81024968  6.78232998  4.58257569
+  3.60555128  6.244998    4.58257569  3.60555128  7.81024968  6.244998
+  4.24264069  2.23606798  2.23606798  7.81024968  7.81024968  7.81024968
+  5.19615242  3.74165739  2.          7.81024968 19.         39.
+ 15.         15.          4.         61.          1.         23.
+  8.          9.         12.          5.         61.          9.
+ 14.         61.         39.          8.         15.         21.
+  7.          8.         39.         53.         61.         27.
+ 14.          4.         54.         61.          1.         19.
+ 61.          9.         14.         61.          4.58257569  2.44948974
+  2.44948974  3.          4.35889894  2.82842712  7.81024968  6.244998
+  2.82842712  3.87298335  4.58257569  2.64575131  2.82842712  6.244998
+  7.81024968  2.82842712  2.23606798  7.81024968  4.35889894  6.244998
+  3.87298335  3.87298335  2.          7.34846923  7.81024968  7.81024968
+  7.81024968  6.78232998  2.82842712  2.23606798  7.81024968  6.
+  1.          1.41421356  1.41421356  2.23606798  4.24264069  4.79583152
+  3.87298335  1.73205081  3.31662479  7.34846923  7.81024968  4.79583152
+  3.          6.244998    2.82842712  7.81024968  2.23606798  5.
+  2.23606798  4.35889894  7.81024968  3.87298335  2.44948974  7.81024968
+  2.44948974  3.46410162  1.          3.60555128  2.23606798  7.34846923
+  7.81024968  5.38516481  1.          3.60555128  2.23606798  7.81024968
+  4.79583152  2.82842712  3.          2.44948974  2.44948974  3.46410162
+  3.          3.74165739  2.64575131  7.81024968  6.244998    2.82842712
+  4.24264069  3.87298335  4.58257569  2.64575131  2.82842712  7.81024968
+  6.244998    2.82842712  2.23606798  7.81024968  6.244998    4.58257569
+  3.46410162  2.64575131  2.23606798  5.          7.81024968  4.79583152
+  3.87298335  3.87298335  2.          7.34846923  7.81024968  7.81024968
+  7.81024968  5.19615242  3.74165739  2.          7.81024968  1.41421356
+  4.58257569  4.24264069  1.41421356  3.46410162  2.23606798  2.
+  7.81024968  1.          4.35889894  7.81024968  3.          6.244998
+  7.81024968  1.73205081  1.          3.60555128  2.23606798  7.41619849
+  7.81024968  6.40312424  3.74165739  2.23606798  7.34846923  7.81024968
+  6.244998    4.79583152  3.87298335  7.41619849  7.81024968  6.40312424
+  3.74165739  2.23606798  7.34846923  7.81024968  6.244998    4.79583152
+  3.87298335  7.41619849  7.81024968  5.19615242  3.74165739  2.
+  7.81024968  6.244998    2.82842712 18.         15.         21.
+  7.          8.         61.          1.         14.          4.
+ 61.         39.          8.         18.         15.         21.
+  7.          8.         61.         61.         61.         46.
+  8.          5.         61.         22.         15.         18.
+ 16.          1.         12.         61.          2.         12.
+  1.          4.          5.          7.81024968  4.79583152  2.23606798
+  3.74165739  6.244998    7.81024968  4.35889894  3.74165739  3.
+  1.73205081  3.31662479  2.23606798  4.24264069  7.87400787  4.35889894
+  3.74165739  1.          1.73205081  3.31662479  7.41619849  7.81024968
+  5.83095189  2.23606798  7.81024968  3.46410162  2.23606798  2.44948974
+  6.244998    7.81024968  3.          6.244998    7.81024968  2.
+  2.23606798  1.          2.          7.34846923  7.81024968  1.
+  3.74165739  2.          7.81024968  4.79583152  3.          6.244998
+  2.82842712  7.81024968  3.          6.244998    4.35889894  7.81024968
+  2.82842712  2.23606798  1.          2.          7.81024968  7.81024968
+  7.81024968  5.83095189  2.23606798  7.81024968  4.79583152  2.23606798
+  3.74165739  6.244998    7.81024968  2.64575131  1.          3.46410162
+  4.58257569  3.60555128  4.          2.82842712  3.          3.74165739
+  2.64575131  7.81024968  1.41421356  1.          1.73205081  3.31662479
+  7.28010989  7.81024968  7.61577311  5.19615242  3.74165739  2.
+  7.81024968  2.82842712  1.          4.35889894  6.244998    7.81024968
+  6.244998    2.82842712  3.87298335  4.58257569  7.81024968  4.35889894
+  3.46410162  1.          3.          3.74165739  7.81024968  6.244998
+  2.82842712  2.23606798  7.81024968  6.          1.          1.41421356
+  1.41421356  2.23606798  4.24264069  4.79583152  3.87298335  1.73205081
+  3.31662479  7.48331477  7.81024968  7.81024968  7.81024968  5.38516481
+  3.87298335  3.60555128  2.23606798  7.81024968  6.244998    3.87298335
+  7.81024968  3.60555128  5.          7.81024968  1.          4.24264069
+  3.60555128  4.35889894  7.34846923  7.81024968  3.60555128  5.
+  7.81024968  1.41421356  2.23606798  1.          3.60555128  3.
+  4.35889894  2.82842712  7.81024968  1.41421356  3.87298335  5.
+  7.41619849  7.81024968 41.         61.          6.         18.
+  1.          2.         10.         15.         21.         19.
+ 61.          4.          1.         25.         55.         61.
+ 29.          1.         12.         12.         15.         15.
+  8.         55.         61.         29.          1.         12.
+ 12.          1.         25.         55.         58.         61.
+ 61.         61.          5.83095189  2.23606798  7.81024968  1.73205081
+  2.82842712  3.87298335  4.24264069  6.244998    3.46410162  2.23606798
+  2.          7.81024968  3.          3.74165739  7.81024968  2.82842712
+  3.          4.35889894  7.81024968  3.16227766  3.87298335  5.
+  7.28010989  7.81024968  7.54983444  6.78232998  4.79583152  1.
+  4.35889894  7.81024968  1.41421356  4.24264069  3.          3.46410162
+  3.46410162  3.          2.64575131  7.34846923  7.81024968  1.
+  3.74165739  2.          7.81024968  6.244998    2.82842712  2.23606798
+  7.81024968  4.35889894  3.46410162  3.          6.244998    2.82842712
+  5.          7.81024968  6.244998    3.87298335  4.69041576  2.23606798
+  4.35889894  7.81024968  7.81024968  7.81024968  5.47722558  3.
+  2.          7.81024968  2.64575131  5.          4.24264069  2.23606798
+  7.81024968  1.          3.74165739  2.          7.81024968  2.64575131
+  3.          3.60555128  1.41421356  3.46410162  2.23606798  7.81024968
+  3.          3.74165739  7.81024968  6.244998    2.82842712  2.23606798
+  7.81024968  4.79583152  1.          1.41421356  2.23606798  8.
+  7.81024968  5.19615242  3.46410162  3.46410162  7.81024968  3.60555128
+  3.          3.60555128  4.35889894  5.          7.81024968  4.79583152
+  2.23606798  4.24264069  2.23606798  7.81024968  6.244998    2.82842712
+  2.23606798  7.81024968  1.41421356  3.87298335  4.24264069  3.87298335
+  2.64575131  3.87298335  4.69041576  2.23606798  4.35889894  7.34846923
+  7.81024968  7.81024968  7.81024968  5.19615242  3.74165739  2.
+  7.81024968  6.244998    2.82842712  2.23606798  7.81024968  3.60555128
+  3.87298335  3.60555128  2.23606798  7.81024968  4.24264069  1.
+  6.244998    2.82842712  4.35889894  7.81024968  3.87298335  4.58257569
+  6.244998    2.64575131  4.24264069  1.          1.41421356  2.23606798
+  7.28010989]</code></pre>
+</div>
+</div>
+<div id="cell-25" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="5dcf8be5-3eb9-41cd-e1b5-919c07b5e2f6" data-execution_count="35">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">#round to nearest whole number</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>one_d <span class="op">=</span> np.<span class="bu">round</span>(one_d)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(one_d)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[57. 46. 23.  1. 19. 61.  2. 18.  9. 12. 12.  9.  7. 54. 61.  1. 14.  4.
+ 61. 39.  8.  5. 61. 19. 12.  9. 39.  8. 25. 61. 39. 15. 22.  5. 19. 61.
+  3.  8.  5.  3.  2.  8.  3.  5.  4.  2.  8.  1.  4.  2.  8.  3.  3.  4.
+  1.  3.  2.  8.  3.  4.  8.  6.  3.  2.  8.  5.  1.  1.  2.  8.  8.  5.
+  3.  3.  8.  4.  3.  4.  4.  5.  8.  5.  2.  4.  2.  8.  6.  3.  2.  8.
+  1.  4.  4.  4.  3.  4.  5.  2.  4.  7.  8.  8.  8.  5.  4.  2.  8.  6.
+  3.  2.  8.  4.  4.  4.  2.  8.  4.  1.  6.  3.  4.  8.  4.  5.  6.  3.
+  4.  1.  1.  2.  7.  8.  8.  5.  2.  5.  1.  4.  2.  8.  6.  3.  2.  8.
+  6.  1.  1.  1.  2.  4.  5.  4.  2.  3.  7.  8.  4.  5.  8.  4.  4.  4.
+  7.  8.  8.  8.  7.  3.  2.  8.  3.  1.  5.  4.  8.  6.  3.  1.  6.  8.
+  1.  3.  6.  2.  7.  8.  6.  3.  2.  8.  2. 12.  1. 23. 19. 61. 39.  8.
+  1. 39. 61.  3.  1. 39.  3.  8. 55. 61. 28.  5. 23.  1. 18.  5. 61. 39.
+  8.  5. 61. 36. 21.  2. 10. 21.  2. 61.  2.  3.  4.  2.  7.  8.  1.  4.
+  2.  8.  4.  3.  5.  4.  8.  8.  8.  7.  3.  2.  8.  2.  4.  5.  4.  3.
+  4.  5.  4.  8.  5.  1.  4.  2.  2.  4.  4.  4.  1.  6.  2.  3.  7.  8.
+  8.  6.  2.  8.  6.  4.  4.  3.  8.  3.  3.  4.  8.  5.  4.  4.  4.  1.
+  3.  8.  4.  5.  4.  4.  2.  8.  3.  4.  8.  3.  1.  4.  2.  8.  8.  8.
+  8.  6.  4.  4.  3.  8.  6.  3.  4.  2.  8.  6.  3.  2.  8.  4.  1.  4.
+  5.  4.  4.  2.  8.  2.  4.  2.  8.  3.  2.  8.  4.  4.  5.  3.  3.  6.
+  8.  8.  7.  4.  8.  4.  2.  4.  6.  2.  2.  8.  3.  2.  8.  1.  5.  8.
+  6.  3.  2.  8.  7.  5.  4.  6.  5.  4.  8.  6.  4.  2.  2.  8.  8.  8.
+  5.  4.  2.  8. 19. 39. 15. 15.  4. 61.  1. 23.  8.  9. 12.  5. 61.  9.
+ 14. 61. 39.  8. 15. 21.  7.  8. 39. 53. 61. 27. 14.  4. 54. 61.  1. 19.
+ 61.  9. 14. 61.  5.  2.  2.  3.  4.  3.  8.  6.  3.  4.  5.  3.  3.  6.
+  8.  3.  2.  8.  4.  6.  4.  4.  2.  7.  8.  8.  8.  7.  3.  2.  8.  6.
+  1.  1.  1.  2.  4.  5.  4.  2.  3.  7.  8.  5.  3.  6.  3.  8.  2.  5.
+  2.  4.  8.  4.  2.  8.  2.  3.  1.  4.  2.  7.  8.  5.  1.  4.  2.  8.
+  5.  3.  3.  2.  2.  3.  3.  4.  3.  8.  6.  3.  4.  4.  5.  3.  3.  8.
+  6.  3.  2.  8.  6.  5.  3.  3.  2.  5.  8.  5.  4.  4.  2.  7.  8.  8.
+  8.  5.  4.  2.  8.  1.  5.  4.  1.  3.  2.  2.  8.  1.  4.  8.  3.  6.
+  8.  2.  1.  4.  2.  7.  8.  6.  4.  2.  7.  8.  6.  5.  4.  7.  8.  6.
+  4.  2.  7.  8.  6.  5.  4.  7.  8.  5.  4.  2.  8.  6.  3. 18. 15. 21.
+  7.  8. 61.  1. 14.  4. 61. 39.  8. 18. 15. 21.  7.  8. 61. 61. 61. 46.
+  8.  5. 61. 22. 15. 18. 16.  1. 12. 61.  2. 12.  1.  4.  5.  8.  5.  2.
+  4.  6.  8.  4.  4.  3.  2.  3.  2.  4.  8.  4.  4.  1.  2.  3.  7.  8.
+  6.  2.  8.  3.  2.  2.  6.  8.  3.  6.  8.  2.  2.  1.  2.  7.  8.  1.
+  4.  2.  8.  5.  3.  6.  3.  8.  3.  6.  4.  8.  3.  2.  1.  2.  8.  8.
+  8.  6.  2.  8.  5.  2.  4.  6.  8.  3.  1.  3.  5.  4.  4.  3.  3.  4.
+  3.  8.  1.  1.  2.  3.  7.  8.  8.  5.  4.  2.  8.  3.  1.  4.  6.  8.
+  6.  3.  4.  5.  8.  4.  3.  1.  3.  4.  8.  6.  3.  2.  8.  6.  1.  1.
+  1.  2.  4.  5.  4.  2.  3.  7.  8.  8.  8.  5.  4.  4.  2.  8.  6.  4.
+  8.  4.  5.  8.  1.  4.  4.  4.  7.  8.  4.  5.  8.  1.  2.  1.  4.  3.
+  4.  3.  8.  1.  4.  5.  7.  8. 41. 61.  6. 18.  1.  2. 10. 15. 21. 19.
+ 61.  4.  1. 25. 55. 61. 29.  1. 12. 12. 15. 15.  8. 55. 61. 29.  1. 12.
+ 12.  1. 25. 55. 58. 61. 61. 61.  6.  2.  8.  2.  3.  4.  4.  6.  3.  2.
+  2.  8.  3.  4.  8.  3.  3.  4.  8.  3.  4.  5.  7.  8.  8.  7.  5.  1.
+  4.  8.  1.  4.  3.  3.  3.  3.  3.  7.  8.  1.  4.  2.  8.  6.  3.  2.
+  8.  4.  3.  3.  6.  3.  5.  8.  6.  4.  5.  2.  4.  8.  8.  8.  5.  3.
+  2.  8.  3.  5.  4.  2.  8.  1.  4.  2.  8.  3.  3.  4.  1.  3.  2.  8.
+  3.  4.  8.  6.  3.  2.  8.  5.  1.  1.  2.  8.  8.  5.  3.  3.  8.  4.
+  3.  4.  4.  5.  8.  5.  2.  4.  2.  8.  6.  3.  2.  8.  1.  4.  4.  4.
+  3.  4.  5.  2.  4.  7.  8.  8.  8.  5.  4.  2.  8.  6.  3.  2.  8.  4.
+  4.  4.  2.  8.  4.  1.  6.  3.  4.  8.  4.  5.  6.  3.  4.  1.  1.  2.
+  7.]</code></pre>
+</div>
+</div>
+<div id="cell-26" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="007d09c3-89d8-4fe6-9fc6-40e3e4f13c2d" data-execution_count="36">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">#replace 39s with 20</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>one_d[one_d <span class="op">==</span> <span class="dv">39</span>] <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(one_d)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[57. 46. 23.  1. 19. 61.  2. 18.  9. 12. 12.  9.  7. 54. 61.  1. 14.  4.
+ 61. 20.  8.  5. 61. 19. 12.  9. 20.  8. 25. 61. 20. 15. 22.  5. 19. 61.
+  3.  8.  5.  3.  2.  8.  3.  5.  4.  2.  8.  1.  4.  2.  8.  3.  3.  4.
+  1.  3.  2.  8.  3.  4.  8.  6.  3.  2.  8.  5.  1.  1.  2.  8.  8.  5.
+  3.  3.  8.  4.  3.  4.  4.  5.  8.  5.  2.  4.  2.  8.  6.  3.  2.  8.
+  1.  4.  4.  4.  3.  4.  5.  2.  4.  7.  8.  8.  8.  5.  4.  2.  8.  6.
+  3.  2.  8.  4.  4.  4.  2.  8.  4.  1.  6.  3.  4.  8.  4.  5.  6.  3.
+  4.  1.  1.  2.  7.  8.  8.  5.  2.  5.  1.  4.  2.  8.  6.  3.  2.  8.
+  6.  1.  1.  1.  2.  4.  5.  4.  2.  3.  7.  8.  4.  5.  8.  4.  4.  4.
+  7.  8.  8.  8.  7.  3.  2.  8.  3.  1.  5.  4.  8.  6.  3.  1.  6.  8.
+  1.  3.  6.  2.  7.  8.  6.  3.  2.  8.  2. 12.  1. 23. 19. 61. 20.  8.
+  1. 20. 61.  3.  1. 20.  3.  8. 55. 61. 28.  5. 23.  1. 18.  5. 61. 20.
+  8.  5. 61. 36. 21.  2. 10. 21.  2. 61.  2.  3.  4.  2.  7.  8.  1.  4.
+  2.  8.  4.  3.  5.  4.  8.  8.  8.  7.  3.  2.  8.  2.  4.  5.  4.  3.
+  4.  5.  4.  8.  5.  1.  4.  2.  2.  4.  4.  4.  1.  6.  2.  3.  7.  8.
+  8.  6.  2.  8.  6.  4.  4.  3.  8.  3.  3.  4.  8.  5.  4.  4.  4.  1.
+  3.  8.  4.  5.  4.  4.  2.  8.  3.  4.  8.  3.  1.  4.  2.  8.  8.  8.
+  8.  6.  4.  4.  3.  8.  6.  3.  4.  2.  8.  6.  3.  2.  8.  4.  1.  4.
+  5.  4.  4.  2.  8.  2.  4.  2.  8.  3.  2.  8.  4.  4.  5.  3.  3.  6.
+  8.  8.  7.  4.  8.  4.  2.  4.  6.  2.  2.  8.  3.  2.  8.  1.  5.  8.
+  6.  3.  2.  8.  7.  5.  4.  6.  5.  4.  8.  6.  4.  2.  2.  8.  8.  8.
+  5.  4.  2.  8. 19. 20. 15. 15.  4. 61.  1. 23.  8.  9. 12.  5. 61.  9.
+ 14. 61. 20.  8. 15. 21.  7.  8. 20. 53. 61. 27. 14.  4. 54. 61.  1. 19.
+ 61.  9. 14. 61.  5.  2.  2.  3.  4.  3.  8.  6.  3.  4.  5.  3.  3.  6.
+  8.  3.  2.  8.  4.  6.  4.  4.  2.  7.  8.  8.  8.  7.  3.  2.  8.  6.
+  1.  1.  1.  2.  4.  5.  4.  2.  3.  7.  8.  5.  3.  6.  3.  8.  2.  5.
+  2.  4.  8.  4.  2.  8.  2.  3.  1.  4.  2.  7.  8.  5.  1.  4.  2.  8.
+  5.  3.  3.  2.  2.  3.  3.  4.  3.  8.  6.  3.  4.  4.  5.  3.  3.  8.
+  6.  3.  2.  8.  6.  5.  3.  3.  2.  5.  8.  5.  4.  4.  2.  7.  8.  8.
+  8.  5.  4.  2.  8.  1.  5.  4.  1.  3.  2.  2.  8.  1.  4.  8.  3.  6.
+  8.  2.  1.  4.  2.  7.  8.  6.  4.  2.  7.  8.  6.  5.  4.  7.  8.  6.
+  4.  2.  7.  8.  6.  5.  4.  7.  8.  5.  4.  2.  8.  6.  3. 18. 15. 21.
+  7.  8. 61.  1. 14.  4. 61. 20.  8. 18. 15. 21.  7.  8. 61. 61. 61. 46.
+  8.  5. 61. 22. 15. 18. 16.  1. 12. 61.  2. 12.  1.  4.  5.  8.  5.  2.
+  4.  6.  8.  4.  4.  3.  2.  3.  2.  4.  8.  4.  4.  1.  2.  3.  7.  8.
+  6.  2.  8.  3.  2.  2.  6.  8.  3.  6.  8.  2.  2.  1.  2.  7.  8.  1.
+  4.  2.  8.  5.  3.  6.  3.  8.  3.  6.  4.  8.  3.  2.  1.  2.  8.  8.
+  8.  6.  2.  8.  5.  2.  4.  6.  8.  3.  1.  3.  5.  4.  4.  3.  3.  4.
+  3.  8.  1.  1.  2.  3.  7.  8.  8.  5.  4.  2.  8.  3.  1.  4.  6.  8.
+  6.  3.  4.  5.  8.  4.  3.  1.  3.  4.  8.  6.  3.  2.  8.  6.  1.  1.
+  1.  2.  4.  5.  4.  2.  3.  7.  8.  8.  8.  5.  4.  4.  2.  8.  6.  4.
+  8.  4.  5.  8.  1.  4.  4.  4.  7.  8.  4.  5.  8.  1.  2.  1.  4.  3.
+  4.  3.  8.  1.  4.  5.  7.  8. 41. 61.  6. 18.  1.  2. 10. 15. 21. 19.
+ 61.  4.  1. 25. 55. 61. 29.  1. 12. 12. 15. 15.  8. 55. 61. 29.  1. 12.
+ 12.  1. 25. 55. 58. 61. 61. 61.  6.  2.  8.  2.  3.  4.  4.  6.  3.  2.
+  2.  8.  3.  4.  8.  3.  3.  4.  8.  3.  4.  5.  7.  8.  8.  7.  5.  1.
+  4.  8.  1.  4.  3.  3.  3.  3.  3.  7.  8.  1.  4.  2.  8.  6.  3.  2.
+  8.  4.  3.  3.  6.  3.  5.  8.  6.  4.  5.  2.  4.  8.  8.  8.  5.  3.
+  2.  8.  3.  5.  4.  2.  8.  1.  4.  2.  8.  3.  3.  4.  1.  3.  2.  8.
+  3.  4.  8.  6.  3.  2.  8.  5.  1.  1.  2.  8.  8.  5.  3.  3.  8.  4.
+  3.  4.  4.  5.  8.  5.  2.  4.  2.  8.  6.  3.  2.  8.  1.  4.  4.  4.
+  3.  4.  5.  2.  4.  7.  8.  8.  8.  5.  4.  2.  8.  6.  3.  2.  8.  4.
+  4.  4.  2.  8.  4.  1.  6.  3.  4.  8.  4.  5.  6.  3.  4.  1.  1.  2.
+  7.]</code></pre>
+</div>
+</div>
+<div id="cell-27" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="9e5abc8c-b2a9-4f99-dc0f-41c5393a8e6a" data-execution_count="43">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check for evens</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>count_evens <span class="op">=</span> np.<span class="bu">sum</span>(one_d <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(count_evens)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>570</code></pre>
+</div>
+</div>
+<div id="cell-28" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:122}}" data-outputid="6051453b-5e51-4cc0-cdf0-261ef595c05c" data-execution_count="42">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">''</span>.join(<span class="bu">map</span>(<span class="bu">str</span>, symbols_df.loc[one_d<span class="op">-</span><span class="dv">1</span>][<span class="st">'Symbol'</span>]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="42">
+<pre><code>'\'Twas brillig, and the slithy toves checbhcedbhadbhccdacbhcdhfcbheaabhhecchdcddehebdbhfcbhadddcdebdghhhedbhfcbhdddbhdafcdhdefcdaabghhebeadbhfcbhfaaabdedbcghdehdddghhhgcbhcaedhfcafhacfbghfcbhblaws that catch! Beware the Jubjub bcdbghadbhdcedhhhgcbhbdedcdedheadbbdddafbcghhfbhfddchccdhedddachdeddbhcdhcadbhhhhfddchfcdbhfcbhdadeddbhbdbhcbhddeccfhhgdhdbdfbbhcbhaehfcbhgedfedhfdbbhhhedbhstood awhile in thought. And, as in ebbcdchfcdeccfhcbhdfddbghhhgcbhfaaabdedbcghecfchbebdhdbhbcadbgheadbheccbbccdchfcddecchfcbhfeccbeheddbghhhedbhaedacbbhadhcfhbadbghfdbghfedghfdbghfedghedbhfcrough and through   The vorpal bladehebdfhddcbcbdhddabcghfbhcbbfhcfhbbabghadbhecfchcfdhcbabhhhfbhebdfhcaceddccdchaabcghhedbhcadfhfcdehdcacdhfcbhfaaabdedbcghhheddbhfdhdehadddghdehabadcdchadeghO frabjous day! Callooh! Callay!"   fbhbcddfcbbhcdhccdhcdeghhgeadhadcccccghadbhfcbhdccfcehfdebdhhhecbhcedbhadbhccdacbhcdhfcbheaabhhecchdcddehebdbhfcbhadddcdebdghhhedbhfcbhdddbhdafcdhdefcdaabg'</code></pre>
+</div>
+</div>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>number<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
